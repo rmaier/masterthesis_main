@@ -1,0 +1,260 @@
+%	Dependencies: texlive texlive-lang-german texlive-latex-recommended texlive-xetex cm-super kile biber 
+%
+%
+%	main.tex
+%
+%	main for Master Thesis @ QW TU Berlin 
+%
+%	author: Rudolph R. Maier	
+%
+%	TU Berlin - 2018
+%
+%	Zur Benutzung von Bibtex und Biblatex: http://www.ub.uni-konstanz.de/serviceangebote/literaturverwaltung/bibtex/bibtex-und-biblatex-benutzen.html
+%				Bibtex:		\renewcommand{\bibname}{Literaturverzeichnis} 
+%
+%	für Biber: tex.stackexchange.com/questions/26516/how-to-use-biber
+% 		   pdflatex biber pdflatex
+%
+%% 	definiert Dokumenttyp und Grundlegende Einstellungen:
+%
+%
+\documentclass[a4paper,oneside,11pt,titlepage,	%, captions=nooneline	% captions=nooneline --> flushleft
+% twocolumn
+% bibtotoc, liststotoc, % obsolete options 
+% longbibliography % deprecated: bibtex option
+% bibtotoc - Lit.VZ im Inha1ltsVZ
+]{scrreprt}
+				
+\usepackage[
+% 	colorlinks=true,
+% 	urlcolor=blue,
+% 	linkcolor=red,
+	pdfauthor={Rudolph Ribeiro Maier},
+	pdftitle={Titel der Masterarbeit},
+% 	pdfsubject={The Subject},
+% 	pdfkeywords={Some Keywords},
+	pdfproducer={Latex with hyperref},
+ 	pdfcreator={pdflatex}
+	bookmarks,				% PDF index
+]{hyperref}
+						%	KOMA Script (als Europäische  Anpassung vorzuziehen) 
+% 						%	scrartcl, scrreprt, scrbook, scrlttr2
+
+%% Codierung
+\usepackage[utf8]{inputenc}			%	Codierung im Editor fuer direkte Eingabe der Sonderzeichen (WIN: latin1 oder ansinew, MAC: applemac, alt.: utf8)
+\usepackage[T1]{fontenc}			%	U.A. damit Umlaute in PDF Dokumenten gefunden werden,  (T1: PostScript Type 1)
+\usepackage[ngerman]{babel}			%	Anpassung der Überschriften und Silbentrennung (ngerman. english,...)
+%		
+%% Seitenränder
+% 
+\usepackage{geometry}
+\geometry{left=30mm, right=25mm, top=20mm, bottom=20mm}
+% Disable single lines at the start of a paragraph (Schusterjungen)
+\clubpenalty = 10000
+% Disable single lines at the end of a paragraph (Hurenkinder)
+\widowpenalty = 10000
+\displaywidowpenalty = 10000
+
+%    Kein Einrücken der Absätze
+\setlength{\parindent}{0pt}
+
+% Zeilenabstand 
+\usepackage{setspace}
+\onehalfspacing
+
+% New header
+\usepackage{fancyhdr}
+\input{latex_settings/fancyhdr}
+
+% 
+%% Mathematik
+\usepackage{amssymb}				%	Mathematische Symbole (Pfeile etc...)
+\usepackage{amsfonts}
+\usepackage{amsmath}				%	Fuer Mathematische Gleichungen
+
+\usepackage[right]{eurosym}			% 	Eurozeichen 
+\usepackage{amsopn}				%	für \grad
+\DeclareMathOperator{\grad}{grad}		%	für \grad
+
+% 
+%Setzt den equation-Zaehler nach jeder Section zurueck
+% \numberwithin{equation}{section}	
+%
+%% Content Management
+\usepackage{subfigure} 				%	Grafiken nebeneinander : http://www.golatex.de/zwei-bilder-nebeneinander-t1915.html
+\renewcommand{\floatpagefraction}{.8}		% 	Figure Objekte erst ab x % alleine auf einer Seite ohne Text
+% \begin{figure} 
+%     \subfigure[Bezeichnung der linken Grafik]{\includegraphics[width=0.49\textwidth]{ordner/name1.jpg}} 
+%     \subfigure[Bezeichnung der rechten Grafik]{\includegraphics[width=0.49\textwidth]{ordner/name2.jpg}} 
+% \caption{Titel unterm gesamten Bild} 
+% \end{figure}
+\usepackage{pstricks}				% 	PSTRICKS .tex Grafiken von DIA 
+\usepackage{tikz}				% 	einbinden von DIA Grafiken (PGF?)
+\usepackage{graphicx}				%	einbinden von Graphiken :	\includegraphics{schachbrett.eps}
+\usepackage{colortbl}				% 	Für \rowcolor[gray]{0.9} zum Einfärben von Tabellenzeilen
+% \graphicspath{{img/}}
+% 
+\usepackage{pdfpages} 				%	PDF include : 			\includepdf[pages={5,8,10-14}]{internal_rate_of_return.pdf}
+\usepackage{listings}				%	Wie \begin{verbatim} : 		\begin{lstlisting}
+						%	add hypertext capabilities
+% 
+% disable fucking ugly boxes
+\hypersetup{pdfborder = 0 0 0}
+% \booktabs					%	Für die Tabellen
+\usepackage{tabularx}
+%\usepackage{pdflscape}				%	Querformat
+%\usepackage{enumitem}				%	Für bessere nummerierungen
+%
+% VON MAX
+%\usepackage{subfigure}                         % mehrere Graphiken in einer Abbildung
+%\usepackage{float}                             % erweiterte floating Befehle
+%\usepackage[section]{placeins}                 % definiert \FloatBarrier
+\usepackage[locale=DE]{siunitx}	
+% 
+% 
+\usepackage[
+    backend=biber,
+    style=alphabetic, 	%numeric,
+    bibstyle=alphabetic,
+    sortlocale=de_DE,
+%     natbib=true,
+%     url=false, 
+    isbn=false,
+    doi=true,
+%     defernumbers=true, % 
+%     ibidtracker=context, %damit ebd. funktioniert 
+%     eprint=false
+]{biblatex} % Biber 
+\usepackage{csquotes}				% When using babel or polyglossia with biblatex, loading csquotes is recommended to ensure that quoted texts are typeset according to the rules of your main language.
+\addbibresource{../10_research/bibliography/main.bib}
+% 	Name, Vorname: 
+\DeclareNameAlias{default}{last-first}
+%	Doppelpunkt nach Autor ( Anstatt Punkt)
+\renewcommand*{\labelnamepunct}{\addcolon\addspace}
+%
+% \usepackage{german,longtable}
+%
+
+%------------------------------------------------------
+% Add Glossary Functionality
+\usepackage[
+nonumberlist, 	% don't display page location where Term is used
+acronym,      % create acronym list
+% toc,           % Add GLossary location to Table of Contents..
+% section
+]      % ..as a section/chapter (but without number!)
+{glossaries}
+%
+% Make \gls not fragile (useful if used within \caption{})
+\robustify{\gls}
+\robustify{\glspl}
+%
+% deactivate the default . after descriptions in the Glossary
+\renewcommand*{\glspostdescription}{}
+ 
+% Let the makefile build a glossary
+\makeglossaries
+%
+% Include glossary.tex file with all the definitions
+\include{latex_settings/glossary}
+%
+%%====================================================================================================
+%
+%
+%------------------------------------------------------
+% Add Blank page Functionality
+\usepackage{afterpage}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+%     
+%%====================================================================================================
+
+\input{latex_settings/font_sel}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+\begin{document}
+%
+% \changefont{ptm}{m}{n}
+% 
+\setcounter{page}{-1}
+\pagenumbering{roman}
+\include{latex_settings/front} % This is the titlepage
+\maketitle
+% \includepdf{latex_settings/AUF1_70.pdf}			% Aufgabenstellung
+% \includepdf{latex_settings/AUF2_70.pdf}
+% \blankpage
+%
+%
+%=====================================================
+% Load Declaration of Authorship
+\newpage
+\pagestyle{text}
+\include{latex_settings/declaration}
+%=====================================================
+%
+% \include{acknowledgment}
+% \include{summary}
+% \newpage
+% 
+% \begin{abstract}
+\input{0_abstract}
+\addcontentsline{toc}{chapter}{Kurzzusammenfassung}
+% \end{abstract}
+
+\tableofcontents
+%
+% %=====================================================
+% % Print Glossary
+% \newpage
+% % \pagestyle{glossary}
+% % \glsaddall
+% \printglossary[%style=altlist,
+% title=Abkürzungsverzeichnis]%,toctitle=Abkürzungsverzeichnis]
+% %  Damit erscheint es im InhaltsVZ als chapter. Die eingebaute Funktion beim Laden von glossaries unterstützt nur section, nicht chapter
+% \addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+% %
+% %=====================================================
+% \pagestyle{fzvz}
+% % \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+% \newpage
+% \chaptermark{Verzeichnis der Formelzeichen}	% für chaptername im fancyheader, nur hier nötig
+% \addcontentsline{toc}{chapter}{Verzeichnis der Formelzeichen}
+% \input{./tab/fvz1}
+% \newpage
+% \input{./tab/fvzg1}
+% \newpage
+% % \addcontentsline{toc}{chapter}{\listfigurename}
+% \listoffigures
+% \newpage
+% \listoftables
+% 
+%%====================================================================================================
+%             				 TEXTANFANG
+%%====================================================================================================
+%
+\pagestyle{text}
+% Add Left Header
+\onehalfspacing
+%
+%
+% \include{0_work}
+\newpage
+\setcounter{page}{0}
+\pagenumbering{arabic}
+\input{1_einleitung}		% \input{file} includes the commands and references
+\input{2_methodik}
+% \input{2_}}
+% 
+\newpage
+\printbibliography %[title={Literaturverzeichnis}]
+%
+%
+\newpage
+\appendix
+\input{99_appendix}  
+\newpage
+\blankpage
+\end{document}

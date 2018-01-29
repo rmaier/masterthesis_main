@@ -1,0 +1,166 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%								                                %
+%	Rudolph Ribeiro Maier - 330466 			        %
+%	TU Berlin - Masterthesis			        %
+%	01/2018						        %
+%							        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Stand:      29.01.2018
+
+pdfTeX:		3.14159265-2.6-1.40.16 (TeX Live 2015/Debian)
+biber version: 	2.4
+JabRef: 	2.10 (build 0)
+Qt: 		4.8.7
+KDE: 		4.14.16
+Kile: 		2.1.3
+OpenJDK:	build 1.8.0_151-8u151-b12-0ubuntu0.16.04.2-b12
+
+
+
+Guide to setup Latex Environment
+
+1. LATEX-Distro
+
+sudo apt-get install texlive texlive-lang-german texlive-latex-extra \
+cm-super \
+kile \
+biber
+
+
+Stand:      28.11.2017
+
+Gefrickel VOR reinstall: 
+
+sudo apt-get install  
+	jabref - complaining about biblatex.sty
+	texlive-bibtex-extra - no command biber
+	biber
+
+
+Stand:      18.07.2014
+
+Linux x2000 3.13.0-30-generic #55-Ubuntu SMP Fri Jul 4 21:40:53 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+
+biber version: 	1.8
+pdfTeX:		3.1415926-2.5-1.40.14 (TeX Live 2013/Debian)
+Qt: 		4.8.6
+KDE:	 	4.13.2
+Kile:		2.1.3
+JabRef: 	2.10b2 (build 0)
+GNU Octave:	version 3.8.1
+Gnuplot:	Version 4.6 patchlevel 4    last modified 2013-10-02 
+
+Extra Debian Packages:
+texlive-fonts-extra
+
+Biblatex:
+
+Dokumentation siehe biblatex.pdf.
+Biblatex ist die aktuelle Version, mit biber wird der Code bearbeitet.
+
+Folgende Sequenz zum Kompilieren ausführen:
+
+pdflatex
+biber
+pdflatex
+
+Folgenden Code zum Einbinden in den Header:
+
+\usepackage[
+    style=numeric,					% Citationstyle	(Zitierung im Fließtext/Fußnote)
+    bibstyle=numeric,					% Bibliographystyle (QuellenVZ)
+    sortlocale=de_DE,
+]{biblatex} 						% Biber 
+\addbibresource{main.bib}				% Einbinden der Bibliographie-Datei
+\renewcommand*{\labelnamepunct}{\addcolon\addspace}	% Doppelpunkt nach Autor, wie DIN1505
+\printbibliography[title={Literaturverzeichnis}]	% Benutzerdefinierter Titel für das Literaturverzeichnis
+
+
+Siunitx:
+
+Zum korrekten setzen von Zahlen und Einheiten.
+
+Einbinden (Header):	
+
+\usepackage[locale=DE]{siunitx}
+
+Benutzung: 
+
+\SI{12,3}{\kilo\meter\per\second\cubed}			% Zahlen mit Einheiten
+\si{\celsius}						% Nur Einheiten
+\nu{12e-12}						% Nur Zahl
+
+
+Glossaries:
+
+Einbinden (Header):
+
+% Add Glossary Functionality
+\usepackage[
+nonumberlist, % don't display page location where Term is used
+acronym,      % create acronym list
+toc,          % Add GLossary location to Table of Contents..
+section]      % ..as a section (but without number!)
+{glossaries}
+
+% Make \gls not fragile (useful if used within \caption{})
+\robustify{\gls}
+\robustify{\glspl}
+
+% deactivate the default . after descriptions in the Glossary
+\renewcommand*{\glspostdescription}{}
+ 
+% Let the makefile build a glossary
+\makeglossaries
+
+% Include glossary.tex file with all the definitions
+\include{glossary}
+
+
+Einbinden (Body):
+
+% Print Glossary
+\newpage
+% \pagestyle{glossary}
+% \glsaddall
+% \printglossaries
+\printglossary[%style=altlist,
+title=Abkürzungsverzeichnis,toctitle=Abkürzungsverzeichnis]
+
+Datenbank (glossaries.tex):
+
+\newglossaryentry{atb}
+{
+  name=ATB,
+  description={Leibniz-Institut für Agrartechnik Potsdam-Bornim e. V.}
+}
+
+Benutzung:
+
+\gls{atb}
+
+Compiler:
+
+pdflatex
+...
+makeglossaries glossary
+...
+pdflatex
+
+
+
+Leerzeilen mit SED ersetzen:
+
+sed -i 's/^$/%/g' file		# -e für Bildschirmausgabe
+
+
+
+###########################################
+
+PDF Tools:
+
+FONT Check: pdffonts main.pdf
+
+PDF/A check:  jhove -m pdf-hul main.pdf
+
+Für Kompatibilität: pdftk main.pdf output main_val.pdf
