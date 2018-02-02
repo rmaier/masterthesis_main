@@ -48,7 +48,7 @@
 %% Seitenränder
 % 
 \usepackage{geometry}
-\geometry{left=30mm, right=25mm, top=20mm, bottom=20mm}
+\geometry{left=30mm, right=30mm, top=20mm, bottom=20mm}
 % Disable single lines at the start of a paragraph (Schusterjungen)
 \clubpenalty = 10000
 % Disable single lines at the end of a paragraph (Hurenkinder)
@@ -58,9 +58,13 @@
 %    Kein Einrücken der Absätze
 \setlength{\parindent}{0pt}
 
-% Zeilenabstand 
-\usepackage{setspace}
-\onehalfspacing
+% Zeilenabstand & Font
+\usepackage[doublespacing]{setspace}			% singlespacing, onehalfspacing, doublespacing
+							% wird später für den Fließtext mit \linespread{x} definiert
+
+\input{latex_settings/font_sel}
+\renewcommand*{\rmdefault}{\sfdefault}			% definiert serifenlos für serifenschrift (Grundtext). http://texwelt.de/wissen/fragen/785/wie-stelle-ich-alle-schrift-in-meinem-dokument-auf-serifenlos
+
 
 % New header
 \usepackage{fancyhdr}
@@ -172,7 +176,6 @@ acronym,      % create acronym list
 %     
 %%====================================================================================================
 
-\input{latex_settings/font_sel}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 \begin{document}
@@ -207,14 +210,14 @@ acronym,      % create acronym list
 \tableofcontents
 %
 % %=====================================================
-% % Print Glossary
-% \newpage
-% % \pagestyle{glossary}
-% % \glsaddall
-% \printglossary[%style=altlist,
-% title=Abkürzungsverzeichnis]%,toctitle=Abkürzungsverzeichnis]
-% %  Damit erscheint es im InhaltsVZ als chapter. Die eingebaute Funktion beim Laden von glossaries unterstützt nur section, nicht chapter
-% \addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+% Print Glossary
+\newpage
+% \pagestyle{glossary}
+% \glsaddall
+\printglossary[%style=altlist,
+title=Abkürzungsverzeichnis]%,toctitle=Abkürzungsverzeichnis]
+%  Damit erscheint es im InhaltsVZ als chapter. Die eingebaute Funktion beim Laden von glossaries unterstützt nur section, nicht chapter
+\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
 % %
 % %=====================================================
 % \pagestyle{fzvz}
@@ -235,9 +238,11 @@ acronym,      % create acronym list
 %             				 TEXTANFANG
 %%====================================================================================================
 %
+% \linespread{}
+
 \pagestyle{text}
 % Add Left Header
-\onehalfspacing
+% \onehalfspacing
 %
 %
 % \include{0_work}
