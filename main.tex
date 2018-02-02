@@ -59,7 +59,7 @@
 \setlength{\parindent}{0pt}
 
 % Zeilenabstand & Font
-\usepackage[doublespacing]{setspace}			% singlespacing, onehalfspacing, doublespacing
+\usepackage{setspace}			% singlespacing, onehalfspacing, doublespacing. Oder \setstretch{1.25} https://texblog.org/2011/09/30/quick-note-on-line-spacing/
 							% wird später für den Fließtext mit \linespread{x} definiert
 
 \input{latex_settings/font_sel}
@@ -242,8 +242,8 @@ title=Abkürzungsverzeichnis]%,toctitle=Abkürzungsverzeichnis]
 
 \pagestyle{text}
 % Add Left Header
-% \onehalfspacing
-%
+% 
+\setstretch{1.5}		% is equivalent to MS Word Zeilenabstand 1.5
 %
 % \include{0_work}
 \newpage
@@ -252,8 +252,9 @@ title=Abkürzungsverzeichnis]%,toctitle=Abkürzungsverzeichnis]
 \input{1_einleitung}		% \input{file} includes the commands and references
 \input{2_methodik}
 % \input{2_}}
-% 
+\singlespacing
 \newpage
+\
 \printbibliography %[title={Literaturverzeichnis}]
 %
 %
