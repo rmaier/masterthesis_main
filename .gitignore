@@ -3,6 +3,7 @@
 /log
 /tab
 /templates
+*.bib~
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
