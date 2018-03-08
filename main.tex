@@ -158,7 +158,7 @@ acronym,      % create acronym list
 \renewcommand*{\glspostdescription}{}
  
 % Let the makefile build a glossary
-\makeglossaries
+\makenoidxglossaries
 %
 % Include glossary.tex file with all the definitions
 \include{latex_settings/glossary}
@@ -214,10 +214,8 @@ acronym,      % create acronym list
 % Print Glossary
 \newpage
 % \pagestyle{glossary}
-% \glsaddall
-\printglossary[%style=altlist,
-title=Abkürzungsverzeichnis]%,toctitle=Abkürzungsverzeichnis]
-%  Damit erscheint es im InhaltsVZ als chapter. Die eingebaute Funktion beim Laden von glossaries unterstützt nur section, nicht chapter
+\glsaddall
+\printnoidxglossaries 		% see [glossariesbegin.pdf, p.16]
 \addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
 % %
 % %=====================================================
@@ -250,8 +248,8 @@ title=Abkürzungsverzeichnis]%,toctitle=Abkürzungsverzeichnis]
 \newpage
 \setcounter{page}{0}
 \pagenumbering{arabic}
-% \input{1_einleitung}		% \input{file} includes the commands and references
-% \input{2_methodik}
+\input{1_einleitung}		% \input{file} includes the commands and references
+\input{2_methodik}
 \input{3_durchfuehrung}
 \newpage
 \singlespacing
