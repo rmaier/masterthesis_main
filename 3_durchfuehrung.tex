@@ -232,7 +232,7 @@ Bei der Beschaffung erhöhen \gls{bspw} eine hohe Informationstransparenz und Mu
 % Enabler
 
 REINFELDER behandelt Aspekte für die Planung anlaufrobuster Produktionssysteme insbesondere während des Anlaufs mithilfe der Digitalen Fabrik \cite{Reinfelder2004}. 
-Grundidee ist, Fertigungssysteme so auszulegen, dass sie ein Maximum an Flexibilität und Transparenz bieten. Mithilfe von Flexibilität können Defizite in noch nicht eingeschwungenen Fertigungssystemen ausgeglichen, sowie unkomliziert Änderungen vorgenommen werden. Transparenz dient hier dem Erreichen einer steilen Lernkurve. 
+Grundidee ist, Fertigungssysteme so auszulegen, dass sie ein Maximum an Flexibilität und Transparenz bieten. Mithilfe von Flexibilität können Defizite in noch nicht eingeschwungenen Fertigungssystemen ausgeglichen, sowie unkompliziert Änderungen vorgenommen werden. Transparenz dient hier dem Erreichen einer steilen Lernkurve. 
 
 \subsection{Schnelle Erstellung von Planungsalternativen}
 
@@ -252,6 +252,53 @@ Weiterhin sollen Planungsinhalte in frühe Planungsphasen verlagert, Planungslei
 
 Besonders in schnell wachsenden Unternehmen sind die dynamischen Randbedingungen volatiler. Schnelle und häufige Änderungen der Stückzahlen erfordern Änderungen des Produktionssystems in kurzen Intervallen. Häufige Produkt- und Prozessänderungen sind grundlegende Bestandteile des Lean Start-up und erfordern die gleichzeitige Generierung von mehreren Planungsalternativen. 
 
+% \section{JoergHinrichs-2004 - Kollaboratives Anlaufmanagement}
 
+\section{Dombrowski-2009 - Lean Ramp-up. Ein Organisationsmodell}
 
+DOMBROWSKI et al. entwickelt ein Organisationsmodell für das Lean Ramp-up \cite{Dombrowski2009}. Kerngedanke ist der effiziente Einsatz von Mitarbeitern durch zielgerichtete Verwendung von standardisierten Methoden und Werkzeugen. DOMBROWSKI et al. kritisiert zum Einen den isolierten Einsatz von Methoden und Werkzeugen sowie fehlende bereichsübergreifende Zusammenarbeit, zum Anderen den Einsatz von auf Großunternehmen zugeschnittenen Lösungen in \gls{kmu}. 
+Grundlage für den hier entwickelten Ordnungsrahmen ist das Modell des Ganzheitlichen Produktionssystems (\gls{gps}). Dazu wurde das \gls{gps} entlang des \gls{pep} auf den Serienanlauf erweitert und der Lösungsansatz des Lean Ramp-up entwickelt. Die drei wesentlichen Gestaltungskomponenten werden im Folgenden erläutert. 
 
+\subsection{Klassifizierung von Serienanläufen}
+Serienanläufe werden bisweilen noch als aufwändig zu etablierendes Projekt angesehen \cite{Kuhn2002}. Jedoch lassen sich wiederkehrende Elemente im Serienanlauf in Form von Referenzprozessen abbilden. Hierzu werden Referenzprozesse für bestimmte Serienanlaufklassen definiert. Die Klassifizierung erfolgt sowohl nach Grad der Produkt- bzw. Prozessänderung \cite{Kuhn2002} als auch nach Komplexität%TODO cite [16] Hertrampf ZWF
+.
+Die Komplexität ergibt sich \gls{bspw} aus Fertigungstiefe, Variantenvielfalt, Stückzahl oder der Anzahl der Lieferanten.
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=.3]{./img/dom09:klassen.png}
+ % dom09:klassen.png: 0x0 pixel, 0dpi, 0.00x0.00 cm, bb=
+ \caption{Klassifizierung des Serienanlaufs \cite{Dombrowski2009}}
+ \label{fig:anlaufklassen}
+\end{figure}
+
+Die Klassifizierung erfolgt in drei Stufen (Abb. \ref{fig:anlaufklassen}). \textit{Neuanlauf:} Einführung eines neuen Produkts oder Prozesses. \textit{Änderungsanlauf:} Ein Produkt oder Prozess mit wesentlichen Änderungen wird eingeführt. \textit{Wiederholungsanlauf:} Anlauf eines nahezu unveränderten Produkts mit standardisierten Prozessen nach einer längeren Pause. 
+Es wird eine Unterteilung in weitere Unterklassen vorgeschlagen für die jeweils Referenzprozesse definiert werden. 
+Durch Klassifizierung und den Einsatz der Referenzprozesse kann sich das Unternehmen auf kritische Anlaufprozesse konzentrieren und ein gleichzeitiges Agieren an allen Fronten wird vermieden.
+
+\subsection{Organisatorische Verankerung des Ordnungsrahmens}
+Erst durch die Zuordnung der Methoden und Werkzeuge zu den betreffenden Prozessen und Mitarbeitern im Ordnungsrahmen werden Aufwand und Komplexität im Serienanlauf reduziert. Dazu wurde der \gls{gps} Ordnungsrahmen für das Lean Ramp-up zu einer Matrixstruktur weiterentwickelt. Dieser integriert inhaltlich zusammengehörende Serienanlaufprozesse in sog. Handlungsfeldern. DOMBROWSKI et al. definiert ein Handlungsfeld als einen Rahmen zur inhaltlichen Strukturierung des Serienanlaufs, welches stets das beschreibt, was im Serienanlauf getan werden muss. Über die Verknüpfung zu den Gestaltungsfeldern wird definiert, wie die Dinge, d.h. mit welchen Werkzeugen sie getan werden müssen. Die Werkzeuge dienen in diesem Zusammenhang hauptsächlich der Umsetzung der Methoden. 
+
+\subsection{Auswahl von Methoden und Werkzeugen mit Hilfe des \gls{qfd}}
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[scale=.35]{./img/dom09:qfd.png}
+ % dom09:qfd.png: 0x0 pixel, 0dpi, 0.00x0.00 cm, bb=
+ \caption{Systematische Auswahl von Methoden und Werkzeugen mittels \gls{qfd} \cite{Dombrowski2009}}
+ \label{fig:qfd}
+\end{figure}
+
+DOMBROWSKI et al. sieht einen entscheidenden Wettbewerbsvorteil im Einsatz perfekt aufeinander abgestimmten Methoden und Werkzeuge und deren perfekte Ausrichtung an die Kundenanforderungen. % TODO cite [10]
+Das Quality Function Deployment (\gls{qfd}) eignet sich gut für die Analyse und Darstellung solch komplexer Korrelationen. In diesem Fall erfolgt die Auswahl von Methoden und Werkzeugen in einem zweistufigen \gls{qfd} (Abb. \ref{fig:qfd}). 
+
+Zunächst werden die detaillierten Ziele mit den Handlungsfeldern, Prozessen und Ergebnissen in Beziehung gesetzt und anschließend gewichtet. Ggf. kann bestehendes Wissen aus bisherigen Serienanläufen bei der Bewertung hinzugezogen werden. 
+Ziel ist die Identifikation und Priorisierung der kritischen Handlungsfelder, Prozesse und Ergebnisse.
+Nach erfolgter Priorisierung werden Mess- und Kontrollpunkte sowie dazugehörige Soll-Werte definiert. 
+
+Der zweite Schritt erfolgt analog zum Ersten, mit dem Unterschied, dass zusätzlich die Gestaltungsfelder, Methoden und Werkzeuge hinzugezogen, in Beziehung gesetzt und gewichtet werden. 
+In (14) befinden sich dann schließlich die ausgewählten Gestaltungsfelder, Methoden und Werkzeuge für das Lean Ramp-up. 
+%%
+
+\subsection{Einordnung}
+Die Klassifizierung der Serienanläufe sowie das Einfließen von Erfahrung aus vergangenen Serienanläufen ist in den frühen Phasen des \gls{lsu} nicht möglich bzw. nicht sinnvoll. Jedoch bietet das zweistufige \gls{qfd}-Verfahren eine objektive und systematische Herangehensweise die Aktivitäten im Serienanlauf auf die kritischen und wichtigen Prozesse zu konzentrieren. 
