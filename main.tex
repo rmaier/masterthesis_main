@@ -19,6 +19,7 @@
 %
 %
 \documentclass[a4paper,oneside,11pt,titlepage,	%, captions=nooneline	% captions=nooneline --> flushleft
+pointlessnumbers,
 % twocolumn
 % bibtotoc, liststotoc, % obsolete options 
 % longbibliography % deprecated: bibtex option
@@ -248,8 +249,8 @@ acronym,      % create acronym list
 \newpage
 \setcounter{page}{0}
 \pagenumbering{arabic}
-\input{1_einleitung}		% \input{file} includes the commands and references
-\input{2_methodik}
+ \input{1_einleitung}		% \input{file} includes the commands and references
+% \input{2_methodik}
 \input{3_durchfuehrung}
 \newpage
 \singlespacing
