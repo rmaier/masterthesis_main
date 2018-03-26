@@ -215,7 +215,7 @@ acronym,      % create acronym list
 % Print Glossary
 \newpage
 % \pagestyle{glossary}
-\glsaddall
+% \glsaddall
 \printnoidxglossaries 		% see [glossariesbegin.pdf, p.16]
 \addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
 % %
@@ -249,9 +249,9 @@ acronym,      % create acronym list
 \newpage
 \setcounter{page}{0}
 \pagenumbering{arabic}
- \input{1_einleitung}		% \input{file} includes the commands and references
-% \input{2_methodik}
-\input{3_durchfuehrung}
+%  \input{1_einleitung}		% \input{file} includes the commands and references
+\input{2_methodik}
+% \input{3_durchfuehrung}
 \newpage
 \singlespacing
 % \newpage
@@ -261,7 +261,7 @@ acronym,      % create acronym list
 %
 \newpage
 \appendix
-\input{99_appendix}  
+% \input{99_appendix}  
 \newpage
 \blankpage
 \end{document}
