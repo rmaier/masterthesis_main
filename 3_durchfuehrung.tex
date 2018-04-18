@@ -352,7 +352,7 @@ Die Überprüfung der Dimension Unternehmenskultur hingegen ist in den frühen P
 \section{Regelung}
 \subsection*{Basse-2014 - Beherrschung von Unsicherheiten}
 
-BASSE et al. entwickelt Prinzipien zur Beherrschung von Unsicherheiten im Anlauf \cite{Basse2014a}. Ansatz ist die Beherrschung der Komplexität. Für Komplexitätstreiber wurden drei Quellen identifiziert: Interdiszliplinarität, Interdependenzen und dynamisch verändernde innere und äußere Bedingungen \cite{Basse2014a, Gartzen2012, Schuh2008}. % TODO cite Franzkoch in Schuh2008 -> [11]. Gartzen2012 nicht geprüft
+BASSE et al. entwickelt Prinzipien zur Beherrschung von Unsicherheiten im Anlauf \cite{Basse2014a}. Ansatz ist die Beherrschung der Komplexität. Für Komplexitätstreiber wurden drei Quellen identifiziert: Interdisziplinarität, Interdependenzen und dynamisch verändernde innere und äußere Bedingungen \cite{Basse2014a, Gartzen2012, Schuh2008}. % TODO cite Franzkoch in Schuh2008 -> [11]. Gartzen2012 nicht geprüft
 % \subsubsection*{Lösungsansatz}
 
 \textbf{Modelldesign:} Modelle erleichtern die Darstellung und Analyse komplexer Systeme. Dies wird hauptsächlich durch Strukturierung und Abstraktion der Elemente erreicht. 
@@ -364,7 +364,7 @@ Insbesondere die Abbildung der Struktur und des Verhaltens sind für den Seriena
 Die Anlaufplanung ist immer ein Kompromiss aus Detaillierungsgrad und Aufwand. Um die Systemziele zu erfüllen und gleichzeitig Rücksicht auf Zielkonflikte zu nehmen, hilft eine Herangehensweise die mögliche Lösungsansätze in Lösungsräumen darstellt und für die Ergebnisse Toleranzbereiche definiert. Lösungsräume beschreiben verschiedene Zusammensetzungen von Lösungsansätzen, die jeweils die Systemziele erfüllen. 
 
 \textbf{Mustererkennung und Selbstoptimierung:}
-Komplexe Systeme bestehen nicht gänzlich aus willkürlichen Strukturen. Auch in komplexen Systemen können Muster erkannt werden, von denen Regeln abgeleitet werden können. Sie helfen das System zu verstehen, ohne die Funktion oder die Ursachen zu erkennen. Darauf aubauend können Regelungsmechanismen angewendet werden. Mit Hilfe dieser Regelungsmechanismen können die Ziele und das Systemverhalten angepasst werden \cite{Frank2009}. %TODO nicht geprüft 
+Komplexe Systeme bestehen nicht gänzlich aus willkürlichen Strukturen. Auch in komplexen Systemen können Muster erkannt werden, von denen Regeln abgeleitet werden können. Sie helfen das System zu verstehen, ohne die Funktion oder die Ursachen zu erkennen. Darauf aufbauend können Regelungsmechanismen angewendet werden. Mit Hilfe dieser Regelungsmechanismen können die Ziele und das Systemverhalten angepasst werden \cite{Frank2009}. %TODO nicht geprüft 
 
 \textbf{Zusammenfassung:}
 Die vorgeschlagenen Prinzipien sind Maßnahmen zur Verringerung der Komplexität eines Systems. Bei geringerer Komplexität sind Entscheidungen leichter zu fällen und die Konsequenzen besser abzuschätzen. 
@@ -481,6 +481,35 @@ Bei der Beschaffung erhöhen \gls{bspw} eine hohe Informationstransparenz und Mu
 
 
 \section{Änderungen}
+
+\subsection{Schuh-2017 - Änderungsmanagement für den \gls{pep}}
+SCHUH et al. entwickelt ein Framework für effektives Änderungsmanagement in agilen Produktentstehungsprozessen \cite{Schuh2017}. Das Framework untergliedert sich in drei Phasen und drei Designelementen, die kurz vorgestellt werden. 
+
+\subsubsection*{Phasen}
+SCHUH et al. beschreibt ein Modell in drei Phasen, in welchen der Reifegrad des Produkts kontinuierlich ansteigt. % Alternativ: , welche den ProduktReifegrad repräsentieren. 
+Die Phasen zeichnen sich durch eine individuelle Fokussierung der Schwerpunkte und Ausprägungen der Designelemente aus. 
+
+\begin{enumerate}
+ \item In der ersten Phase, auch ``Prototyp-'' oder ``Mockup-''Phase genannt, beginnt die Produktentwicklung bei der Produktidee. An dieser Stelle sind eine sehr hohe Agilität sowie die Ermöglichung vieler Freiheitsgrade gefragt. Die Produktionsplanung ist noch grob gehalten und die Dokumentation ist, sofern vorhanden, minimal ausgeprägt. 
+ \item In der Übergangsphase arbeiten die Subsysteme zum ersten Mal zusammen. Sie stellt ein Kompromiss zwischen Agilität und vorgegebenen Prozessen dar. Erste Produktionsprozesse werden beschrieben und die Stücklisten werden vervollständigt. 
+ \item Die dritte Phase ``Vorserie und Serie'' beinhaltet den Hochlauf und den Übergang in die Serienfertigung. Die Dokumentation sollte an dieser Stelle mit hohem Detaillierungsgrad vervollständigt werden. Änderungen erfolgen nur noch mittels spezifizierter Änderungsprozesse. Die Änderungen sind jetzt aufwändiger und die Auswirkungen betreffen viele angrenzende Bereiche. 
+\end{enumerate}
+
+\subsubsection*{Designelemente}
+Die Designelemente fokussieren sich auf die Stellhebel, die ein effektives Änderungsmanagement ermöglichen. Hauptaspekt ist ein optimaler Informationsfluss zwischen Produktentwicklung und Produktionsplanung. 
+
+\textbf{Kommunikation: }
+Probleme in der Kommunikation zwischen Entwicklung und Shopfloor entstehen durch mangelhafte Produktdaten, fehlende Standardisierung der Dokumentation oder durch erhöhte Anforderungen an die Mitarbeiter der Fertigung. 
+Während sich die Zusammenarbeit zwischen Produktentwickler und Fertigungsmitarbeiter in der Prototyp-Phase durch engen und informellen Informationsaustausch auszeichnet, ist in den späteren Phasen der systematische Einsatz eines Änderungsprozesses angezeigt. Der Zugriff der Fertigung auf die notwendigen Produktdaten muss in der geforderten Qualität gewährleistet sein. Der Informationsaustausch muss standardisiert erfolgen, Metadaten müssen direkt digital mit den Produktdaten verknüpft werden. Dabei sollten die Mitarbeiter der Fertigung bei der Bewältigung der neuen Aufgaben unterstützt werden. 
+
+\textbf{Prozesse und Rollen: }
+Durch fehlende Abstimmung der Prozesse an die Anforderungen ergibt sich ein ineffizienter Umgang mit unvorhersehbaren Ereignissen. Eine hohe Anzahl an Schnittstellen sowie unklare Rollen und Verantwortlichkeiten tragen auch zu einer ineffizienten Abwicklung bei. 
+Aufgrund der hohen Agilität während der Prototyp-Phase ist der Einsatz von Prozessen hier noch nicht notwendig. In den späteren Phasen müssen jedoch Prozesse für Änderungsmanagement definiert und an die Anforderungen der Fertigung angepasst werden. 
+Weiterhin muss eine eindeutige Zuteilung von Verantwortlichkeiten erfolgen. 
+
+\textbf{Datenstruktur: }
+Probleme in der Datenstruktur entstehen durch mangelhafte Qualität der digitalisierten Daten oder durch intransparentes und inkonsistentes Datenmanagement. Vielfach werden mehrere, teils konkurrierende Softwaresysteme eingesetzt und es entstehen Widersprüche. 
+Abhilfe schafft die Entwicklung einer geeigneten Datenstruktur, die die benötigten Informationen sinnvoll abbildet. Diese Datenstruktur sollte in allen eingesetzten Softwaresystemen implementiert werden, die im Zusammenhang mit Produktdaten stehen. Dadurch kann ein effizienter und effektiver Datenaustausch zwischen den Systemen realisiert werden.  
 
 \section{Kooperationen}
 
