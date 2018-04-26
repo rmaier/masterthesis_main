@@ -38,7 +38,7 @@ Erst durch die Zuordnung der Methoden und Werkzeuge zu den betreffenden Prozesse
  \label{fig:qfd}
 \end{figure}
 
-DOMBROWSKI et al. sieht einen entscheidenden Wettbewerbsvorteil im Einsatz perfekt aufeinander abgestimmten Methoden und Werkzeuge und deren perfekte Ausrichtung an die Kundenanforderungen. % TODO cite [10]
+DOMBROWSKI et al. sieht einen entscheidenden Wettbewerbsvorteil im Einsatz perfekt aufeinander abgestimmter Methoden und Werkzeuge und deren perfekte Ausrichtung an die Kundenanforderungen. % TODO cite [10]
 Das Quality Function Deployment (\gls{qfd}) eignet sich gut für die Analyse und Darstellung solch komplexer Korrelationen. In diesem Fall erfolgt die Auswahl von Methoden und Werkzeugen in einem zweistufigen \gls{qfd} (Abb. \ref{fig:qfd}). 
 
 Zunächst werden die detaillierten Ziele mit den Handlungsfeldern, Prozessen und Ergebnissen in Beziehung gesetzt und anschließend gewichtet. Ggf. kann bestehendes Wissen aus bisherigen Serienanläufen bei der Bewertung hinzugezogen werden. 
@@ -500,7 +500,7 @@ Bei der Beschaffung erhöhen \gls{bspw} eine hohe Informationstransparenz und Mu
 
 \section{Änderungen}
 
-\subsection{Schuh-2017 - Änderungsmanagement für den \gls{pep}}
+\subsection*{Schuh-2017 - Änderungsmanagement für den \gls{pep}}
 SCHUH et al. entwickelt ein Framework für effektives Änderungsmanagement in agilen Produktentstehungsprozessen \cite{Schuh2017}. Das Framework untergliedert sich in drei Phasen und drei Designelementen, die kurz vorgestellt werden. 
 
 \subsubsection*{Phasen}
@@ -528,6 +528,52 @@ Weiterhin muss eine eindeutige Zuteilung von Verantwortlichkeiten erfolgen.
 \textbf{Datenstruktur: }
 Probleme in der Datenstruktur entstehen durch mangelhafte Qualität der digitalisierten Daten oder durch intransparentes und inkonsistentes Datenmanagement. Vielfach werden mehrere, teils konkurrierende Softwaresysteme eingesetzt und es entstehen Widersprüche. 
 Abhilfe schafft die Entwicklung einer geeigneten Datenstruktur, die die benötigten Informationen sinnvoll abbildet. Diese Datenstruktur sollte in allen eingesetzten Softwaresystemen implementiert werden, die im Zusammenhang mit Produktdaten stehen. Dadurch kann ein effizienter und effektiver Datenaustausch zwischen den Systemen realisiert werden.  
+
+\subsection*{Gellermann-2017 - Agiles Änderungsmanagement}
+
+GELLERMANN et al. entwickelt Lösungsansätze für ein agiles Änderungsmanagement \cite{Gellermann2017}. Dazu werden zunächst Fragen und Anforderungen definiert, von denen anschließend Lösungsansätze abgeleitet werden. Der Ansatz beschränkt sich nicht auf standardisierte Prozesse und Tools, sondern strebt vielmehr eine effiziente Abwicklung der Änderungsbearbeitung unter Berücksichtigung der Wechselwirkungen und Interdependenzen an.  Ziel ist ein reibungsloser Projektablauf durch inhaltliche und organisatorische Systematisierung änderungsbedingter Arbeitsabläufe. 
+
+\subsubsection*{Anforderungen}
+
+\begin{enumerate}
+ \item \textbf{Ganzheitliche Betrachtung der Änderungen: }
+Die neu anfallenden und bestehenden Änderungen sollen unabhängig vom Bearbeitungsstatus ganzheitlich betrachtet werden.  
+ \item \textbf{Analyse des Änderungsumfangs: }
+ Sowohl Änderungsumfang als auch die Auswirkungen müssen auf Grundlage einer projektunabhängigen Datenbasis analysiert werden. Dabei stellt die Analyse der Auswirkungen die Grundlage für alle weiteren Prozessschritte dar. 
+ \item \textbf{Gruppierung von Änderungen: }
+  Die Abhängigkeitsverhältnisse zwischen den Änderungen lassen sich anhand ihrer Charakteristika beurteilen. Auf Basis dieser Charakteristika lassen sich die Änderungen zu Änderungsclustern gruppieren. Damit kann eine Zusammenfassung und Paralellisierung von Arbeitsabläufen bei der Durchführung von Änderungen erreicht werden. Aufgrund der hohen Anzahl von auftretenden Änderungen soll dieses Vorgehen automatisiert oder teilautomatisiert werden. 
+ \item \textbf{Festlegung der Bearbeitungsreihenfolgen: }
+ Bei Einzelfallbetrachtung von Änderungen sind die Bearbeitungsreihenfolgen schwer zu systematisieren. Auch eine Abarbeitung nach Eingangsdatum eignet sich nicht, da hier keine Bewertung anhand inhaltlicher Kriterien stattfindet. 
+ Daher muss eine Methodik zur Unterstützung der Festlegung der Bearbeitungsreihenfolgen entwickelt werden. 
+ \item \textbf{Ressourcenzuweisung: }
+ Interdisziplinäre Änderungsabläufe erfordern eine zweckmäßige Zuweisung notwendiger Ressourcen. Die dabei verwendeten Prozesse müssen zielgerichtet, systematisch und effizient gestaltet werden. 
+ \item \textbf{Workflowmanagementsystem: }
+ Mit Hilfe eines zugeschnittenen Workflowmanagementsystems kann die Datenkonsistenz und ein durchgängiges Engineering änderungsbedingter Arbeitsabläufe ermöglicht werden. 
+ \item \textbf{Monitoring: }
+ Laufende Änderungen sind dem Risiko ausgesetzt, durch andere aufkommende Änderungen hinfällig zu werden. Daher ist bei der ganzheitlichen Betrachtung aller Änderungen der jeweilige Bearbeitungsstatus von besonderem Interesse. Ein bedarfsgerechtes Monitoring des Änderungsmanagements minimiert die Risiken. 
+\end{enumerate}
+
+\subsubsection*{Methodisches Vorgehen für das Änderungsmanagement}
+
+\begin{enumerate}
+ \item \textbf{Analyse von Auswirkungen: }
+ Die Auswirkungen der Änderungen werden anhand einer projektunabhängigen Wissensbasis bewertet. 
+ \item \textbf{Analyse von Abhängigkeiten: }
+Die systematische Analyse der Abhängigkeitsverhältnisse der jeweiligen Änderungen erfolgt anhand eines speziell entwickelten Kriterienkatalogs, der die Vorfälle gemäß vordefinierter Charakteristika bewertet. 
+\item \textbf{Überführung in \gls{dsm}: }
+Die zuvor ermittelte Abhängigkeitsstruktur lässt sich mit Hilfe einer Design Structure Matrix (\gls{dsm}) abbilden. 
+ \item \textbf{Quantifizierung des Abhängigkeitsgrades: }
+ Die Abhängigkeitsgrade werden mit Hilfe einer zuvor entwickelten Bewertungssystematik quantifiziert.
+ \item \textbf{Gruppierung und Festlegung der Bearbeitungsreihenfolgen: }
+ Anschließend können mit Hilfe von Clustering-Verfahren Vorgaben für Gruppierung und Bearbeitungsreihenfolgen von Änderungspaketen erstellt werden. 
+\end{enumerate}
+
+\subsubsection*{Implementierung im Workflowmanagementsystem}
+Zur optimalen technischen Unterstützung des Änderungsmanagements müssen die Prozesse in Workflowmanagementsysteme abgebildet werden. In der Praxis werden oft Kombinationen aus \gls{erp} und \gls{plz} bzw. \gls{pdm} Systemen eingesetzt. 
+
+An dieser Stelle werden einige wichtige Elemente genannt. So erfolgt die Ressourcenzuweisung projektbezogen in Abhängigkeit zu bearbeitender Änderungsgruppen. Die Vorgabe der zu durchlaufenden Workflows erfolgt auf Basis der vorhandenen Datenstruktur. Schließlich muss eine Entwicklung rollenspezifischer Monitoringsysteme zur Verfolgung des Änderungsstatus erfolgen. 
+
+
 
 \section{Kooperationen}
 
