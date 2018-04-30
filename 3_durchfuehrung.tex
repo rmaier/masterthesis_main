@@ -489,13 +489,10 @@ Im zweiten Schritt werden mit Hilfe des sog. Wirkgefüges Zusammenhänge zwische
 
 WILDEMANN adaptiert Prinzipien und Methoden des klassischen Risikomanagements für den Produktionsanlauf und leitet anschließend Handlungsempfehlungen ab \cite{Wildemann2004}. Die technischen und organisatorischen Risiken werden soweit minimiert, dass ein sog. anlaufrobustes Produktionssystem erreicht wird. 
 
-\subsubsection*{Risikobetrachtung im Anlaufmanagement}
-* noch nicht fertig gestellt * % TODO to be finished
 
-\subsubsection*{Handlungsempfehlungen für die Risikohandhabung im Produktionsanlauf}
-
-\textbf{Risikoidentifikation und Bewertung}
-Risiken lassen sich zu Produktionssystemelementen zuordnen. Dazu gehören Personal, Material, Prozesse, Anlagen, IT und Infrastruktur. Anschließend werden die Risiken unter dem Aspekt der Auswirkungen klassifiziert. Leistungsrisiken sorgen für ein geringeres Leistungsvermögen des Produktionssystems:
+\subsubsection*{Risikoidentifikation und Bewertung}
+Zur systematischen Erfassung der Risiken werden strukturierte Risikobereiche gebildet. 
+Risiken lassen sich Produktionssystemelementen zuordnen. Dazu gehören Personal, Material, Prozesse, Anlagen, IT und Infrastruktur. Anschließend werden die Risiken unter dem Aspekt der Auswirkungen klassifiziert. Es wird zwischen Leistungs- und Kostenrisiken unterschieden. Leistungsrisiken sorgen für ein geringeres Leistungsvermögen des Produktionssystems:
 % \cite{Wildemann2004}: 
 \begin{itemize}
  \item Versorgungsengpässe bei Material,
@@ -523,23 +520,38 @@ und höherer Bestände,
 
 Um die Risiken zu bewerten, müssen sie quantifiziert werden. Während die Kostenrisiken direkt bewertet werden können, werden Leistungsrisiken im Rahmen der Szenarioberechnung bewertet. 
 
-\textbf{Bildung risikobezogener Anlaufszenarien}
-Bei der Bewertung risikobezogener Anlaufszenarien ist zu beachten, dass potentielle Risiken simultan auftreten und deren Wirkung sich addieren kann. Die Systemleistung ergibt sich aus dem schwächsten Glied, dem sogenannten dominierenden risikobedingten Engpass. Ziel ist zunächst, diese risikobedingten Engpässe mithilfe einer Berechnung von Anlaufszenarien zu identifizieren. %TODO cite [6] Fleischer, Spath. QSimulation im Serienanlauf 
+\subsubsection*{Bildung risikobezogener Anlaufszenarien}
+Bei der Bewertung risikobezogener Anlaufszenarien ist zu beachten, dass potentielle Risiken simultan auftreten und deren Wirkung sich addieren kann. Die Systemleistung ergibt sich aus dem schwächsten Glied, dem sogenannten dominierenden risikobedingten Engpass. Ziel ist zunächst, diese risikobedingten Engpässe mithilfe einer Berechnung von Anlaufszenarien zu identifizieren. %TODO cite [6] Fleischer, Spath. QSimulation im Serienanlauf   wt werkstattstechnik 93
 Dabei werden Kapazitätsverfügbarkeit und -bedarf ermittelt und anschließend gegenübergestellt. Folgende Faktoren werden für die Kapazitätsverfügbarkeit hinzugezogen: Personal, Maschinen, Material, technische Anlageneffizienz, organisatorische Effizienz sowie die Lernkurve im Anlauf. % TODO ggf. Grafik 2 einfügen
 Für die Ermittlung des Kapazitätsbedarfs werden Absatzmengen und der Produktmix hinzugezogen. 
-% TODO Risikokritizität und -sensivität nicht beschrieben. 
 
-\textbf{Ableitung von Handlungsstrategien und Gestaltungsregeln}
+Zur Bewertung der einzelnen Risikoarten wurden die Kenngrößen Risikokritizität und -sensivität definiert. 
+Die Risikokritizität quantifiziert den Einfluss der Risikoart auf das Entstehen des Engpasses. Die Risikosensivität quantifiziert den Einfluss der Eingangsparameter der Szenarien auf die Ausmaße bzgl. der Engpässe. 
 
-Im Folgenden werden vier Handlungsstrategien vorgestellt, die sich% TODO 
+Ergebnis der Anlaufszenarien sind Engpassprofile, die die Grundlage für die Ableitung der folgenden Handlungsempfehlungen bilden. 
 
-Handlungsstrategie 1: Systemrobustheit erhöhen: 
+\subsubsection*{Ableitung von Handlungsstrategien und Gestaltungsregeln}
 
-Handlungsstrategie 1 ist angezeigt, wenn eine geringe Veränderung der Eingangsparameter für erhebliche Schwankungen der Systemleistung sorgt. Da sie eine strukturelle Gestaltungskomponente ist, ist sie vor \gls{sop} anzuwenden. 
-Robuste Systeme erbringen die gewünschte Leistung auch bei Schwankungen der Rahmenbedingungen. 
-Erreicht wird dies durch gezielten Aufbau von Redundanzen und den Einsatz flexibler Anlagenkonzepte.
-Bei der Beschaffung erhöhen \gls{bspw} eine hohe Informationstransparenz und Multi-Supplier-Konzepte die Systemrobustheit. 
+Mit Hilfe der zuvor ermittelten Kenngrößen Risikokritizität und -sensivität kann ein Portfolio gebildet werden Handlungsstrategien differenziert zugeordnet werden. 
 
+WILDEMANN et al. schlägt vier Handlungsstrategien vor: 
+
+\begin{enumerate}
+ \item \textbf{Systemrobustheit erhöhen: }
+ Die Erhöhung der Systemrobustheit wird erzielt durch: Aufbau von Redundanzen, Einsatz flexibler Anlagenkonzepte, Informationstransparenz über die gesamte Wertschöpfungskette und durch Multi-Supplier-Konzepte. Sie ist vor \gls{sop} anzuwenden. 
+ \item \textbf{Leistungsrisiken transformieren: }
+ Sofern Leistungsrisiken nicht durch strukturelle Maßnahmen zu eliminieren sind, sollten sie temporär für den Zeitraum des Anlaufs in Kostenrisiken überführt werden. \Gls{bspw} eignet sich dazu ein gezielter Mehreinsatz von Personal oder eine gezielte Erhöhung der Bestände. 
+ \item \textbf{Kostenrisiken minimieren: }
+ An dieser Stelle können die klassischen Instrumente des Produktionsmanagements eingesetzt werden, welche sich auf die Optimierung eingeschwungener Systeme beziehen. Als Beispiel wird hier das Wertstromdesign genannt. 
+ \item \textbf{Monitoring der Indikatoren: }
+ Die laufende Überwachung von Indikatoren potentieller Risiken ist zentraler Bestandteil präventiven Risikomanagements. 
+% cite [7]
+% Niemeyer, A.: Frühwarnsysteme für das
+% strategische Management. München
+% 2004 
+% TUB: QP360 29  
+ Hierfür müssen zunächst geeignete Kenngrößen und dazugehörige Grenzwerte definiert werden. Das Konzept der Balanced Scorecard bietet eine geeignete Orientierung. 
+\end{enumerate}
 
 \section{Änderungen}
 
