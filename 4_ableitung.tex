@@ -1,4 +1,8 @@
 \chapter{Ableitung Modell}\label{sec:ableitung}
+In diesem Abschnitt werden die Ergebnisse der Arbeit zusammengefasst und ein Umsetzungsleitfaden entwickelt. %TODO Falsche Trennung Umsetzungslei-tfaden !!
+Dieser soll anhand gezielter Fragen die Entwicklung und Umsetzung einer optimalen Anlaufmanagementstrategie für ein bestimmtes Szenario unterstützen. 
+Die Fragen werden zum Schluss jedes Themenkomplexes formuliert und auf Abb. \ref{fig:leitfaden} % TODO Ref & Label
+zusammengefasst. 
 
 \section{Strategie \& Organisation}
 
@@ -30,6 +34,16 @@ Eine weitere Methode zur Konzentration auf die kritischen Anlaufprozesse ist die
 
 Zur unternehmensspezifischen Gestaltung des Lean Ramp-Up Organisationsmodells wurde ein Vorgehen in zehn Schritten definiert. Dieser ist im Abschluss des Abschnitts \ref{sec:zehnschritte} detailliert beschrieben. Zur Analyse und Darstellung komplexer Korrelationen eignet sich das Quality Function Deployment (\gls{qfd}). Zur unternehmensspezifischen Gestaltung wird daher ein zweistufiges \gls{qfd}-Verfahren eingesetzt (s. Abb. \ref{fig:qfd}). 
 
+\begin{verbatim}
+Welche (Teil-)Ziele verfolgt der Serienanlauf? 
+-In welcher Beziehung stehen sie zueinander? 
+Welche Aufgaben unterstützen die Zielerreichung? 
+-Welchen Methoden, Werkzeugen und Mitarbeitern (Rollen) können sie zugeordnet werden?
+Was sind die kritischen Themenstellungen im Serienanlauf?
+Welche Methoden und Werkzeuge können zu Prozessen und Mitarbeitern 
+zugeordnet werden? 
+Wie kann der Serienanlauf inhaltlich strukturiert werden? 
+\end{verbatim}
 
 
 \section{Planung}
@@ -37,11 +51,19 @@ Zur unternehmensspezifischen Gestaltung des Lean Ramp-Up Organisationsmodells wu
 Synergieeffekte beim Einsatz von Lean Methoden und anlaufspezifischen Aktivitäten werden für eine optimale Planung des Serienanlaufs genutzt. 
 
 Die Digitale Fabrik umfasst die Abbildung und Simulation von Produkt, Prozess und Ressourcen in einem Informationssystem. 
-Der konsequente Einsatz von Lean Prinzipien und der Digitalen Fabrik kann zu erheblichen Effizienzsteigerungen führen. \Gls{bspw} können schlanke Prozesse und Standardisierung zur Komplexitätsreduktion und somit zur besseren Beherrschung der Modelle in der Digitalen Fabrik führen. Anstatt verbesserte Technologie einzusetzen, empfiehlt sich die Verbesserung der Prozesse. 
+Der konsequente Einsatz von Lean Prinzipien und der Digitalen Fabrik kann zu erheblichen Effizienzsteigerungen führen. \Gls{bspw} können schlanke Prozesse und Standardisierung zur Komplexitätsreduktion und somit zur besseren Beherrschung der Modelle in der Digitalen Fabrik führen. Anstatt verbesserte Technologie einzusetzen, empfiehlt sich die Verbesserung der Prozesse. Da eine hohe Detailtreue und Datenqualität Erfolgsfaktoren sind, ist für jede Anlaufphase eine angemessene Umsetzung empfehlenswert. 
 
 Der Implementierungsfortschritt von Lean Prinzipien im Unternehmen kann mit einem Reifegradmodell bewertet werden. Dieses Modell Bewertet den Fortschritt in den Dimensionen Methodenkompetenz und Unternehmenskultur. Dazu werden konkrete Eigenschaften zum Implementierungsgrad oder der Einsatz bestimmter Methoden abgefragt. Die Bewertung erfolgt 6-Stufig. Für weitere Details wird auf Abschnitt \ref{sec:rgmodell} verwiesen. Durch den Einsatz des Reifegradmodells kann eine nachhaltige Anwendung von Lean Prinzipien gewährleistet werden. 
 
 Schließlich werden generelle Handlungsempfehlungen für den Einsatz von Lean Prinzipien im Produktionsanlauf formuliert. Für weitere Details wird auf Abschnitt \ref{sec:christensen} verwiesen.
+
+\begin{verbatim}
+Anhand welcher Kriterien / Kennzahlen lässt sich der Reifegrad des 
+Produkts / der Prozesse quantifizieren? 
+Zu welchem Zeitpunkt müssen Produktdaten digital vorliegen? 
+-Welche Detailtreue und -qualität ist wann zu wählen?
+An welchen Stellen ist Standardisierung sinnvoll? 
+\end{verbatim}
 
 \section{Regelung}
 
@@ -51,6 +73,16 @@ Zur Beherrschung von Unsicherheiten eignet sich die Abbildung komplexer Systeme 
 
 Zum optimalen Umgang mit Störungen soll im Vorfeld ein Methodenbaukasten entwickelt werden. Dazu gehört eine Auswahl an modernen Methoden und Werkzeugen sowie die Definition von Standards. Zur objektiven Bewertung von Situationen sollen quantifizierbare Anlaufindikatoren definiert werden. Werden sie mit Hilfe einer Scorecard laufend überwacht, kann eine schnelle und zielgerichtete Reaktion stattfinden. 
 
+\begin{verbatim}
+Mit welcher Strategie soll auf Störungen im Anlauf reagiert werden? 
+-Welche Methoden, Werkzeuge, Standards können hierfür definiert werden? 
+Welche Anlaufindikatoren können zur Überwachung definiert werden? 
+-Wie könnte eine Scorecard zur Überwachung aussehen? 
+Mit welchen Modellen können komplexe Systeme strukturiert und
+abstrahiert werden? 
+\end{verbatim}
+
+
 \section{Produktentwicklung}
 
 Die Produktentwicklung soll Fehler im Produkt und Prozess frühzeitig vermeiden. Möglichst früh soll eine hohe Produkt- und Prozessreife erreicht werden. 
@@ -59,20 +91,40 @@ Beim Aufbau digitaler Produktdatenmodelle soll stets mit aktuellen, echten und p
 
 Das Set-based Engineering ermöglicht frühzeitiges Erreichen hoher Reifegrade. Es werden parallel verschiedene Lösungsentwürfe entwickelt. Das zu Beginn kostenintensive Verfahren zahlt sich später durch schnellere Marktreife und Kostenersparnisse in Serienanlauf und -produktion aus. 
 
+\begin{verbatim}
+Wie können Produkt- und Prozessdaten verknüpft werden? 
+-Welche Software eignet sich dafür?
+Wie können Folgen von Änderungen simuliert und bewertet werden?
+\end{verbatim}
+
+
 \section{Wissen}
 
-Nachhaltiges Wissensmanagement ermöglicht bessere Nutzung firmeninternen Wissens sowie den gezielten Einsatz von Lernprozessen. 
+Nachhaltiges Wissensmanagement ermöglicht bessere Nutzung firmeninternen Wissens sowie den gezielten Einsatz von Lernprozessen. Lernprozesse können zur Reduzierung der Time2Market eingesetzt werden. 
 
 Wissenslücken, insbesondere mit Hinblick auf die Erfüllung der Kundenwünsche, müssen frühzeitig identifiziert werden. Dazu eignen sich Produkttests an Testpersonen. Geeignete Erhebungsinstrumente sind hierfür zu entwickeln. Die gewonnenen Erkenntnisse müssen entlang der gesamten Prozesskette zur Verfügung gestellt werden. Dazu eignet sich ein sog. E-Workflowsystem, welches eine Art \gls{erp}-System darstellt. 
 
 Wissen kann auch gezielt durch Lernprozesse generiert werden. Die Prototypen- und Nullserienphase sollen als Versuchsfeld betrachtet werden. Geplante Versuche in diesen Phasen führen zu Erkenntisgewinn und letztlich zu Verkürzung der Anlaufzeit. 
 
+\begin{verbatim}
+Wie können die Kundenwünsche erfasst werden? 
+-Wie können mangelhafte Produkteigenschaften identifiziert werden? 
+-Welche Erhebungsinstrumente eigenen sich?
+Wie können Lernprozesse zur Reduzierung der Time2Market eingesetzt werden? 
+\end{verbatim}
+
 \section{Qualität}
 
-Gezielter Methodeneinsatz ermöglicht frühzeitige und effektive Analyse von Ursache-Wirkungs %TODO groß oder kleinschreibung? Siehe auch 3.6 QM : Zink2010  
+Gezielter Methodeneinsatz ermöglicht frühzeitige und effektive Analyse von komplexen Ursache-Wirkungs %TODO groß oder kleinschreibung? Siehe auch 3.6 QM : Zink2010  
 Zusammenhängen bei Qualitätsproblemen. 
 
 Das weit verbreitete Ishikawa-Diagramm wird an die Bedürfnisse des Serienanlaufs angepasst. Dazu wurde der sog. Hypothesen-Suchraum entwickelt. Dieser spannt sich über die bekannten und ggf. anzupassenden Ishikawa-Dimensionen (Methode, Material, Mensch, Messung, Milieu, Maschine) und weiterhin durch die relevanten Phasen im Produktlebenszyklus auf. Nachdem potentielle Ursachen  von Qualitätsproblemen identifiziert wurden, werden sie einzelnen Phasen zugeordnet. Im zweiten Schritt werden mit Hilfe des sog. Wirkgefüges Zusammenhänge zwischen den Einflussfaktoren erarbeitet. Dabei bildet das Wirkgefüge die inhaltlichen Wechselwirkungen zwischen den Ursachen übersichtlich ab und lässt Rückschlüsse auf die Hauptursachen zu.
+
+\begin{verbatim}
+Wie können komplexe Ursache-Wirkungs Zusammenhänge analysiert werden? 
+Welche Dimensionen eignen sich für die Ishikawa-Analyse? 
+Mit welchen Phasen soll das Ishikawa-Diagramm erweitert werden?
+\end{verbatim}
 
 \section{Risiken}
 
@@ -81,13 +133,29 @@ Mit der Adaption von klassischen Risikomanagement-Methoden auf den Serienanlauf 
 Zur systematischen Erfassung von Risiken werden strukturierte Risikobereiche gebildet. Risiken lassen sich zu Produktionssystemelementen zuordnen. Anschließend werden sie unter dem Aspekt der Auswirkungen klassifiziert. Es folgt eine getrennte Betrachtung von Leistungs- und Kostenrisiken. 
 Während die Kostenrisiken direkt quantifiziert werden können, müssen Leistungsrisiken im Rahmen der Szenarioberechnung bewertet werden (siehe Abschnitt \ref{sec:wildemannszenarien}).
 Mit Hilfe der Szenarioberechnung wird ein Risikoportfolio erarbeitet. Vier Handlungsstrategien welche in Abschnitt  \ref{sec:wildemannszenarien} beschrieben wurden, lassen sich differenziert den einzelnen Risiken im Portfolio zuordnen.
+Um eine schnelle Reaktion zu gewährleisten empfielt sich die laufende Überwachung von Indikatoren potentieller Risiken. 
+
+\begin{verbatim}
+Anhand welcher Kriterien sollen pot. Risiken gruppiert werden?
+-Welchen PS-Elementen lassen sie sich zuordnen? 
+Welche Handlungsstrategien können für Risikogruppen entwickelt werden?
+Anhand welcher Merkmale sollen Risiken bewertet werden?
+Welche Risiken sollen laufend überwacht werden?
+\end{verbatim}
 
 \section{Änderungen}
 
 Ein aglies Änderungsmanagement ermöglicht eine zielgerichtete Analyse und Durchführung von technischen Änderungen an Produkt und Prozessen. Die Handlungsempfehlung untergliedert sich in Voraussetzungen für ein optimales Änderungsmanagement und in die Durchführung. % TODO Formulierung...
 
-Als Voraussetzungen wird die Definition von Phasen (Prototyp, Übergang, Vorserie/Serie) genannt. Für die Phasen sollen jeweils Ausprägungen in den Dimensionen Agilität, Freiheitsgrade, Produktionsplanung und Dokumentation definiert werden. \Gls{bspw} könnte für die Prototyp-Phase eine hohe Agilität und viele Freiheitsgrade gering ausgeprägter Produktionsplanung und Dokumentation gegenüber stehen. Gestaltungsempfehlungen für die Designemelemte sind in Abschnitt \ref{sec:schuh2017} detailliert beschrieben. 
+Als Voraussetzungen wird die Definition von Phasen (z. B. Prototyp, Übergang, Vorserie/Serie) genannt. Für die Phasen sollen jeweils Ausprägungen in den Dimensionen Agilität, Freiheitsgrade, Produktionsplanung und Dokumentation definiert werden. \Gls{bspw} könnte für die Prototyp-Phase eine hohe Agilität und viele Freiheitsgrade gering ausgeprägter Produktionsplanung und Dokumentation gegenüber stehen. Gestaltungsempfehlungen für die Designemelemte sind in Abschnitt \ref{sec:schuh2017} detailliert beschrieben. 
 Die Durchführung soll eine effiziente Abwicklung der Änderungsbearbeitung unter Berücksichtigung der Wechselwirkungen und Interdependenzen ermöglichen. Zentrale Aspekte bilden die Gruppierung von Änderungen um Aufgaben zu parallelisieren sowie methodische Unterstützung zur Festlegung einer geeigneten Bearbeitungsreihenfolge. 
+
+\begin{verbatim}
+In welche Phasen können Änderungsstrategien untergliedert werden?
+-wie sollen jeweils Änderungsprozesse gestaltet werden?
+Durch welche Maßnahmen können Änderungsprozesse beschleunigt werden?
+Wie können änderungsbedingte Arbeitsabläufe strukturiert werden? 
+\end{verbatim}
 
 \section{Produktionssysteme}
 
@@ -96,3 +164,19 @@ Produktionssysteme sollen robust gegenüber Störungen und flexibel erweiterbar 
 Werden Produktionssysteme einfach und übertragbar gestaltet, kann eine erhöhte Flexibilität bei der Integration neuer Baureihen und Komponenten erreicht werden. Standardisierte Verknüpfung von Prozess- und Produktdaten ermöglicht eine frühzeitige Bewertung von Produkt oder Prozess auf das Produktionssystem. 
 
 Um schnell auf Änderungen reagieren zu können, muss der Planungsaufwand reduziert werden. Zentrale Aspekte bilden hier die Einführung und Nutzung von Standards, welche die Komplexität (Auswahl) verringern. Für Maschinen und Anlagen könnte \gls{bspw} eine Standardisierung mit Hilfe von Bibliotheken erfolgen. Routinetätigkeiten wie z.B. Auswertungen sollten automatisiert erfolgen. 
+
+\begin{verbatim}
+Welche Elemente können standardisiert oder modularisiert werden?
+Wie können Fertigungssysteme transparent und flexibel gestaltet werden? 
+Wie können Fertigungssysteme effizient an ständig wechselnde 
+Anforderungen angepasst werden? 
+\end{verbatim}
+
+
+\begin{figure}[ht]
+ \centering
+ \includegraphics[angle=90,scale=.8, page=2]{./img/Konzept.pdf}
+ % Konzept.pdf: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Umsetzungsleitfaden}
+ \label{fig:leitfaden}
+\end{figure}
