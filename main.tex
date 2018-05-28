@@ -20,6 +20,7 @@
 %
 \documentclass[a4paper,oneside,11pt,titlepage,	%, captions=nooneline	% captions=nooneline --> flushleft
 pointlessnumbers,
+% draft, 		% Ggf. microtype benutzen, siehe scrguide.pdf (KOMA Script v. 20.08.2017) S.59
 % twocolumn
 % bibtotoc, liststotoc, % obsolete options 
 % longbibliography % deprecated: bibtex option
@@ -124,7 +125,7 @@ pointlessnumbers,
     bibstyle=alphabetic,
     sortlocale=de_DE,
 %     natbib=true,
-%     url=false, 
+    url=false, 
     isbn=false,
     doi=true,
 %     defernumbers=true, % 
@@ -188,8 +189,8 @@ acronym,      % create acronym list
 \pagenumbering{roman}
 \include{latex_settings/front} % This is the titlepage
 \maketitle
-% \includepdf{latex_settings/AUF1_70.pdf}			% Aufgabenstellung
-% \includepdf{latex_settings/AUF2_70.pdf}
+\includepdf[pages={1,2}]{latex_settings/onepager.pdf}			% Aufgabenstellung
+% \includepdf[pages=2]{latex_settings/onepager.pdf}			% Aufgabenstellung
 % \blankpage
 %
 %
@@ -249,9 +250,11 @@ acronym,      % create acronym list
 \newpage
 \setcounter{page}{0}
 \pagenumbering{arabic}
-%  \input{1_einleitung}		% \input{file} includes the commands and references
+ \input{1_einleitung}		% \input{file} includes the commands and references
 \input{2_methodik}
-% \input{3_durchfuehrung}
+\input{3_durchfuehrung}
+\input{4_ableitung}
+\input{5_fazit}
 \newpage
 \singlespacing
 % \newpage
