@@ -42,18 +42,39 @@ In Kapitel \ref{sec:durchfuehrung} erfolgt die Erfassung von Lösungskonzepten m
 Damit das zu entwickelnde Modell den Serienanlauf im \gls{lsu} effektiv unterstützt, müssen zunächst einige Anforderungen formuliert werden. 
 
 \subsection*{Methodische Anforderungen}
+%TODO falls methodik und technik aufgelöst wird, im weiteren Text Passagen ersetzen, insbesondere im Ausblick!!
 
-Das zu entwickelnde Anlaufmanagementmodell muss sowohl horizontal als auch vertikal sinnvoll mit dem \gls{lsu} Ansatz kooperieren bzw. integriert werden. 
-Die Beseitigung von Verschwendung sowie Anreize zur kontinuierlichen Verbesserung müssen strukturell im Modell verankert sein. 
 
-Besondere Eigenschaften von (Lean-)Start-ups müssen berücksichtigt werden. Dazu zählen \gls{bspw} eine flache Hierarchie, eine kleine Anzahl an Mitarbeitern, Vorhandensein von Generalisten anstatt Spezialisten und Interdisziplinarität der Mitarbeiter und Aufgaben. Daraus werden folgende Forderungen abgeleitet: Eine kleine Anzahl an einfach anzuwendenden Methoden. Die Gestaltung von Ablauforganisation und Prozessen erfolgt mit geringem Detaillierungsgrad. An anderer Stelle soll jedoch mithilfe von Standardisierung die Komplexität der Lösungsalternativen beschränkt werden. Daraus folgt eine hohe Abstraktionsebene des Modells einerseits, andererseits jedoch ein hoher Detaillierungsgrad. 
+Auf Tabelle \ref{tab:eigenschaften_lsu} sind Eigenschaften von \gls{lsu} (und \gls{kmu}) zusammengefasst. Diese bilden die Basis für die Ableitung der methodischen Anforderungen an das Anlaufmanagementmodell. 
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{l l}
+\textbf{Eigentschaft} & \textbf{Quelle }\\ \hline
+Flache Hierarchie & \cite[10]{Dombrowski2009a} \\ % TODO cite doerler1988
+Kleine Anzahl von Beschäftigten & \cite[9]{Dombrowski2009a} \\
+Generalisten statt Spezialisten & \cite[9]{Dombrowski2009a}\\
+Technisch orientierte Ausbildung der Eigentümer & \cite[47]{Dombrowski2009a}\\
+Kaum nachvollziehbare Dokumentation & \cite[1]{Zimolong2006} \\
+Mangelnde Führungskenntnisse & \cite[47]{Dombrowski2009a}\\
+Mangelnde strategische Orientierung & \cite[48]{Dombrowski2009a}\\
+Sehr hohe Risiken & \cite[9]{Ries2011}\\
+ \end{tabular} 
+ \end{center}
+\caption{Eigenschaften von \gls{lsu} und \gls{kmu}} \label{tab:eigenschaften_lsu} 
+\end{table}
 
+Aufgrund der flachen Hierarchie und der kleinen Anzahl von Mitarbeitern ist ein niedriger Detaillierungsgrad bei der Abbildung von Ablauforganisation und Prozessen ausreichend \cite[151]{Dombrowski2009a}. 
+Die Methoden und Informationssysteme müssen schlank, einfach zu benutzen und zu implementieren sein \cite[4]{Zimolong2007}. % TODO check Mail from Zimolong
+Das Anlaufmanagementmodell soll eine ganzheitliche Perspektive und die Gestaltung und Verfolgung von (Modernisierungs-) Prozessen unterstützen. Aufgrund der mangelnden strategischen Orientierung der Unternehmen soll die Strategieformulierung systematisch unterstützt werden \cite[47-48]{Dombrowski2009a}.
 Des weiteren wird eine Flexibilität des Modells gefordert. So muss das Modell, welches bereits in der Anfangsphase implementiert wird, bei schnellem Wachstum und stark veränderten Bedingungen weiterhin effektiv sein. Dazu zählen \gls{bspw} eine Skalierbarkeit der Methoden hinsichtlich Anzahl der Mitarbeiter sowie Mitarbeiterzuordnung von Kompetenzen und Aufgaben. 
+Das durch hohe Risiken geprägte Umfeld erfordert ein Risikomanagement, das auf die Bedürfnisse des Serienanlaufs angepasst ist. 
+
 
 \subsection*{Technische Anforderungen}
 
-Auch auf technischer Seite ist Flexibilität gefordert. Die Produktion bzw. der Anlauf müssen agil auf Stückzahlschwankungen reagieren können. Änderungen am Produkt oder die Einführung neuer Varianten müssen einfach und schnell mit hoher Qualität realisiert werden können. Analog dazu müssen Änderungen am Logistiksystem und Produktionslinie effizient durchgeführt werden können. 
-Große Unsicherheiten sind ein inhärentes Merkmal des Serienanlaufs. Daher muss ein umfassendes Risikomanagement im Modell verankert sein. 
+Auch auf technischer Seite ist Flexibilität gefordert, die in drei Dimensionen kurz skizziert wird. 
+Die Produktion bzw. der Anlauf müssen agil auf Stückzahlschwankungen reagieren können (Volumenflexibilität). Die schnelle Integration innovativer Technologien muss sichergestellt werden (Technologieflexibilität). Schließlich erfordert die zunehmende Variantenvielfalt, dass mehrere Varianten auf einer Linie gefertigt werden können (Variantenflexibilität) \cite[22]{Scholz2010}.
+Änderungen am Produkt oder die Einführung neuer Varianten müssen einfach und schnell mit hoher Qualität realisiert werden können. Analog dazu müssen Änderungen am Logistiksystem und Produktionslinie effizient durchgeführt werden können.  
 
 \section{Entwicklung des Grundgerüsts}\label{sec:grundgeruest}
 \subsection*{Zielstellung}
