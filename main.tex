@@ -19,7 +19,7 @@
 %
 %
 \documentclass[a4paper,oneside,11pt,titlepage,	%, captions=nooneline	% captions=nooneline --> flushleft
-pointlessnumbers,
+pointlessnumbers,	% Kein Punkt bei Kapitelnummern, nur für scrreprt. Veraltet? (https://golatex.de/pointlessnumbers-pagestyle-t2337.html)
 % draft, 		% Ggf. microtype benutzen, siehe scrguide.pdf (KOMA Script v. 20.08.2017) S.59
 % twocolumn
 % bibtotoc, liststotoc, % obsolete options 
@@ -71,7 +71,8 @@ pointlessnumbers,
 % New header
 \usepackage{fancyhdr}
 \input{latex_settings/fancyhdr}
-
+% \usepackage{titleps}				%	https://tex.stackexchange.com/questions/127972/package-fancyhdr-no-dot-behind-chapter-number-in-header
+% \input{latex_settings/titleps}
 % 
 %% Mathematik
 \usepackage{amssymb}				%	Mathematische Symbole (Pfeile etc...)
@@ -198,6 +199,7 @@ acronym,      % create acronym list
 % Load Declaration of Authorship
 \newpage
 \pagestyle{text}
+
 \include{latex_settings/declaration}
 %=====================================================
 %
@@ -243,7 +245,7 @@ acronym,      % create acronym list
 
 \pagestyle{text}
 % Add Left Header
-% 
+%
 \setstretch{1.5}		% is equivalent to MS Word Zeilenabstand 1.5
 %
 % \include{0_work}
