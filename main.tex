@@ -173,7 +173,7 @@
 \usepackage[
 nonumberlist, 	% don't display page location where Term is used
 acronym,      % create acronym list
-% toc,           % Add GLossary location to Table of Contents..
+toc,           % Add GLossary location to Table of Contents..
 % section
 ]      % ..as a section/chapter (but without number!)
 {glossaries}
@@ -184,7 +184,11 @@ acronym,      % create acronym list
 %
 % deactivate the default . after descriptions in the Glossary
 \renewcommand*{\glspostdescription}{}
- 
+
+\addto\captionsngerman{%						% Translation for glossaries
+ \renewcommand\glossaryname{Abkürzungsverzeichnis}}			% see: https://www.mrunix.de/forums/showthread.php?65522-Glossaries-Verzeichnisbezeichnungen-umbenennen
+\deftranslation[to=ngerman]{Acronyms}{Abkürzungsverzeichnis (trans)}
+\deftranslation[to=ngerman]{Glossary}{Stichwortverzeichnis (trans)} 
 % Let the makefile build a glossary
 \makenoidxglossaries
 %
@@ -245,8 +249,8 @@ acronym,      % create acronym list
 \newpage
 % \pagestyle{glossary}
 % \glsaddall
-\printnoidxglossaries 		% see [glossariesbegin.pdf, p.16]
-\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+\printnoidxglossaries 							% see [glossariesbegin.pdf, p.16]
+% \addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
 % %
 % %=====================================================
 % \pagestyle{fzvz}
