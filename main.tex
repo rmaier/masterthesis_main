@@ -19,7 +19,7 @@
 %
 %
 \documentclass[a4paper,oneside,11pt,titlepage,	%, captions=nooneline	% captions=nooneline --> flushleft
-pointlessnumbers,	% Kein Punkt bei Kapitelnummern, nur für scrreprt. Veraltet? (https://golatex.de/pointlessnumbers-pagestyle-t2337.html)
+% pointlessnumbers,	% Kein Punkt bei Kapitelnummern, nur für scrreprt. Veraltet? (https://golatex.de/pointlessnumbers-pagestyle-t2337.html)
 % draft, 		% Ggf. microtype benutzen, siehe scrguide.pdf (KOMA Script v. 20.08.2017) S.59
 % twocolumn
 % bibtotoc, liststotoc, % obsolete options 
@@ -50,27 +50,52 @@ pointlessnumbers,	% Kein Punkt bei Kapitelnummern, nur für scrreprt. Veraltet? 
 %% Seitenränder
 % 
 \usepackage{geometry}
-\geometry{left=30mm, right=30mm, top=20mm, bottom=20mm}
-% Disable single lines at the start of a paragraph (Schusterjungen)
-\clubpenalty = 10000
-% Disable single lines at the end of a paragraph (Hurenkinder)
-\widowpenalty = 10000
+\geometry{
+  papersize={210mm,297mm},
+  left=30mm, right=30mm, top=20mm, bottom=20mm, % margins
+  headsep = \baselineskip,			% Abstand zwischen Kopf und Haupttext
+  footskip = \dimexpr2\baselineskip+3mm\relax,	% Abstand zwischen Haupttext und der Grundlinie des Fußes
+%   showframe,					% for debugging
+%   includeheadfoot,				% include head/foot in margins
+  }
+%   
+\clubpenalty = 10000				% Disable single lines at the start of a paragraph (Schusterjungen)
+\widowpenalty = 10000				% Disable single lines at the end of a paragraph (Hurenkinder)
 \displaywidowpenalty = 10000
 
-%    Kein Einrücken der Absätze
-\setlength{\parindent}{0pt}
+
+\setlength{\parindent}{0pt}			% Kein Einrücken der Absätze
 
 % Zeilenabstand & Font
-\usepackage{setspace}			% singlespacing, onehalfspacing, doublespacing. Oder \setstretch{1.25} https://texblog.org/2011/09/30/quick-note-on-line-spacing/
-							% wird später für den Fließtext mit \linespread{x} definiert
+\usepackage{setspace}				% singlespacing, onehalfspacing, doublespacing. Oder \setstretch{1.25} https://texblog.org/2011/09/30/quick-note-on-line-spacing/
+						% wird später für den Fließtext mit \linespread{x} definiert
 
 \input{latex_settings/font_sel}
-\renewcommand*{\rmdefault}{\sfdefault}			% definiert serifenlos für serifenschrift (Grundtext). http://texwelt.de/wissen/fragen/785/wie-stelle-ich-alle-schrift-in-meinem-dokument-auf-serifenlos
+\renewcommand*{\rmdefault}{\sfdefault}		% definiert serifenlos für serifenschrift (Grundtext). http://texwelt.de/wissen/fragen/785/wie-stelle-ich-alle-schrift-in-meinem-dokument-auf-serifenlos
 
 
 % New header
-\usepackage{fancyhdr}
-\input{latex_settings/fancyhdr}
+\usepackage{scrlayer-scrpage}			% replaced fancyhdr, see: https://tobiw.de/tbdm/layout-2
+\clearpairofpagestyles
+ 
+\setkomafont{pageheadfoot}{\sffamily\footnotesize}
+\setkomafont{pagehead}{\normalsize}		% {\bfseries}
+\setkomafont{pagination}{}
+
+\KOMAoptions{
+   headsepline = true,
+   footsepline = false,
+   plainheadsepline = true, 
+   plainfootsepline = false,			% no function? 
+}
+\automark[chapter]{chapter}			% syntax: [plainoption]{normaloption}; *{forboth}
+\ihead*{\headmark}
+\ohead*{\pagemark}
+% \ofoot[\pagemark]{}				% Seitenzahlen unten für plain
+% \ohead*{Seite~\pagemark}
+
+% \usepackage{fancyhdr}
+% \input{latex_settings/fancyhdr}
 % \usepackage{titleps}				%	https://tex.stackexchange.com/questions/127972/package-fancyhdr-no-dot-behind-chapter-number-in-header
 % \input{latex_settings/titleps}
 % 
@@ -198,7 +223,8 @@ acronym,      % create acronym list
 %=====================================================
 % Load Declaration of Authorship
 \newpage
-\pagestyle{text}
+% \pagestyle{text}
+\pagestyle{headings}
 
 \include{latex_settings/declaration}
 %=====================================================
@@ -243,7 +269,7 @@ acronym,      % create acronym list
 %
 % \linespread{}
 
-\pagestyle{text}
+% \pagestyle{text}
 % Add Left Header
 %
 \setstretch{1.5}		% is equivalent to MS Word Zeilenabstand 1.5
