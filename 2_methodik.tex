@@ -13,6 +13,7 @@ Zu Beginn der Arbeit erfolgte eine erste Recherche zu den beiden Themenfeldern A
  \end{enumerate}
  Die erste Recherche zu \gls{lsu} genügte den Anforderungen. Die Recherche zu Anlaufmanagement genügte lediglich für die Bildung eines Grundgerüsts, dessen Herangehensweise ausführlich in Abschnitt \ref{sec:grundgeruest} beschrieben wird. Darauf aufbauend erfolgte eine Vertiefung der Literaturrecherche mittels Schneeballsystem. Dazu wurden Literaturlisten der bis dahin zusammengetragenen Quellen, die Namen der Verfasser und \gls{bspw} das Graduiertenkolleg Anlaufmanagement (1491-2) der RWTH-Aachen zu Grunde gelegt. 
 \begin{table}[h]
+\caption{Suchalgorithmen für die Literaturrecherche} \label{tab:algorythm} 
 \begin{center}
 \begin{tabular}{l l}
 \textbf{Themenfeld} & \textbf{Algorithmus }\\ \hline
@@ -22,7 +23,6 @@ Anlaufmanagement & ('Ramp-up' OR 'Manufacturing' AND 'Ramp-up' OR 'Production' \
 Lean Start-up & ('Lean' AND 'Startup' OR 'Lean' AND 'Start-up')
  \end{tabular} 
  \end{center}
-\caption{Suchalgorithmen für die Literaturrecherche} \label{tab:algorythm} 
 \end{table}
 
 In Kapitel \ref{sec:durchfuehrung} erfolgt die Erfassung von Lösungskonzepten mittels qualitativer Literaturanalyse. Die Auswahl der Quellen erfolgt nach folgenden Kriterien:
@@ -41,6 +41,7 @@ Damit das zu entwickelnde Modell den Serienanlauf im \gls{lsu} effektiv unterst�
 
 Auf Tabelle \ref{tab:eigenschaften_lsu} sind Eigenschaften von \gls{lsu} (und \gls{kmu}) zusammengefasst. Diese bilden die Basis für die Ableitung der methodischen Anforderungen an das Anlaufmanagementmodell. 
 \begin{table}[h]
+\caption{Eigenschaften von \gls{lsu} und \gls{kmu}} \label{tab:eigenschaften_lsu} 
 \begin{center}
 \begin{tabular}{l l}
 \textbf{Eigenschaft} & \textbf{Quelle }\\ \hline
@@ -55,7 +56,6 @@ Mangelnde strategische Orientierung & \cite[48]{Dombrowski2009a}\\
 Sehr hohe Risiken & \cite[9]{Ries2011}\\
  \end{tabular} 
  \end{center}
-\caption{Eigenschaften von \gls{lsu} und \gls{kmu}} \label{tab:eigenschaften_lsu} 
 \end{table}
 
 Aufgrund der flachen Hierarchie und der kleinen Anzahl von Mitarbeitern ist ein niedriger Detaillierungsgrad bei der Abbildung von Ablauforganisation und Prozessen ausreichend \cite[151]{Dombrowski2009a}. 
@@ -99,6 +99,7 @@ In der Konsequenz ist zunächst eine Konsolidierung anhand einschlägiger Litera
 Für die weitere Vorgehensweise wurden die Quellen in Tabelle \ref{tab:quellengrundgeruest} identifiziert. 
 % 
 \begin{table}[h]
+\caption{ Auswahl der Quellen für das Grundgerüst} \label{tab:quellengrundgeruest} 
 \begin{center}
 \begin{tabular}{l l l r}
 \textbf{Autor} & \textbf{Jahr} & \textbf{Titel} & \textbf{Ref.} \\ \hline
@@ -109,7 +110,6 @@ Für die weitere Vorgehensweise wurden die Quellen in Tabelle \ref{tab:quellengr
  Schmitt & 2015 & Anlaufmanagement - Begriffe und Definitionen & \cite{Schmitt2015} 
  \end{tabular} 
  \end{center}
-\caption{ Auswahl der Quellen für das Grundgerüst} \label{tab:quellengrundgeruest} 
 \end{table}
 % 
 % 
@@ -300,17 +300,36 @@ Die Tatsache, dass im Serienanlauf noch keine Serienbedingungen herrschen, stell
 \subsection*{Begrenzung des Grundgerüsts}
 
 Aufgrund des begrenzten Umfangs der Arbeit können nicht alle Aspekte im Rahmen dieser Untersuchung betrachtet werden. Grundlage der Auswahl ist eine kombinierte Bewertung der Relevanz sowie der ersten Literaturrecherche. 
-Die Bewertung in Tabelle 
- 
- %TODO REF TABLE
+Die Bewertung in Tabelle \ref{fig:auswahl_gg}
+%  
+ % REF TABLE
 ergibt, dass die Aspekte Kooperationen, Lieferanten sowie Logistik in dieser Arbeit nicht weiter untersucht werden. 
-\begin{figure}[ht]
- \centering
- \includegraphics[scale=.5]{./img/auswahl_gg.png}
- % auswahl_gg.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
- \caption{Auswahl der Aspekte}
- \label{fig:auswahl_gg}
-\end{figure}
+
+\begin{table}[htbp]
+\caption{Bewertung der Aspekte des Grundgerüsts}
+\begin{center}
+\begin{tabular}{llccccccccccccc}
+
+\textbf{Aspekte} & \textbf{ST} & \textbf{OG} & \textbf{PL} & \textbf{RG} & \textbf{PE} & \textbf{WM} & \textbf{QM} & \textbf{RM} & \textbf{ÄM} & \textbf{KO} & \textbf{LI} & \textbf{LO} & \textbf{PS} \\ \hline
+\# Quellen  & 3,0 & 8,0 & 4,0 & 12,0 & 2,0 & 7,0 & 2,0 & 5,0 & 4,0 & 1,0 & 2,0 & 1,0 & 3,0 \\ 
+--> normiert  & 0,3 & 0,7 & 0,3 & 1,0 & 0,2 & 0,6 & 0,2 & 0,4 & 0,3 & 0,1 & 0,2 & 0,1 & 0,3 \\ 
+Relevanz f. LSU  & 5,0 & 5,0 & 4,0 & 4,0 & 4,0 & 4,0 & 3,0 & 5,0 & 3,0 & 2,0 & 2,0 & 1,0 & 4,0 \\ 
+--> normiert &  1,0 & 1,0 & 0,8 & 0,8 & 0,8 & 0,8 & 0,6 & 1,0 & 0,6 & 0,4 & 0,4 & 0,2 & 0,8  \\ \hline  
+\textbf{Gesamt} & \textbf{0,6} & \textbf{0,8} & \textbf{0,6} & \textbf{0,9} & \textbf{0,5} & \textbf{0,7} & \textbf{0,4} & \textbf{0,7} & \textbf{0,5} & \textbf{0,2} & \textbf{0,3} & \textbf{0,1} & \textbf{0,5} \\ 
+\end{tabular}
+\end{center}
+\label{fig:auswahl_gg}
+\end{table}
+
+
+
+% \begin{figure}[ht]
+%  \centering
+%  \includegraphics[scale=.5]{./img/auswahl_gg.png}
+%  % auswahl_gg.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+%  \caption{Auswahl der Aspekte}
+%  \label{fig:auswahl_gg}
+% \end{figure}
 
 Aufgrund der großen Überschneidungen zwischen den Aspekten Strategie und Organisation werden sie im nächsten Abschnitt zusammenhängend betrachtet. 
 % TODO Abbildung -> TAble
