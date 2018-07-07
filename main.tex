@@ -24,7 +24,10 @@
 % twocolumn
 % bibtotoc, liststotoc, % obsolete options 
 % longbibliography % deprecated: bibtex option
-% bibtotoc - Lit.VZ im Inha1ltsVZ
+% bibtotoc - Lit.VZ im Inha1ltsVZ % deprecated, use toc=bib
+toc=bib, 	% bibliography in toc. see scrguide p.77ff
+% toc=flat,	
+toc=listof,	% listoffigures and listoftables in toc
 ]{scrreprt}
 				
 \usepackage[
@@ -239,7 +242,7 @@ toc,           % Add GLossary location to Table of Contents..
 % 
 % \begin{abstract}
 \input{0_abstract}
-\addcontentsline{toc}{chapter}{Kurzzusammenfassung}
+% \addcontentsline{toc}{chapter}{Kurzzusammenfassung}
 % \end{abstract}
 
 \tableofcontents
@@ -250,6 +253,8 @@ toc,           % Add GLossary location to Table of Contents..
 % \pagestyle{glossary}
 % \glsaddall
 \printnoidxglossaries 							% see [glossariesbegin.pdf, p.16]
+\listoffigures
+\listoftables
 % \addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
 % %
 % %=====================================================
