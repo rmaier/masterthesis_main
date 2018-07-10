@@ -20,6 +20,7 @@
 %
 \documentclass[a4paper,oneside,11pt,titlepage,	%, captions=nooneline	% captions=nooneline --> flushleft
 % pointlessnumbers,	% Kein Punkt bei Kapitelnummern, nur für scrreprt. Veraltet? (https://golatex.de/pointlessnumbers-pagestyle-t2337.html)
+numbers=noenddot,	% Kein Punkt bei Kapitelnummern, funktioniert mit scrbook (siehe: https://tex.stackexchange.com/questions/25729/remove-dot-after-appendix-numbering)
 % draft, 		% Ggf. microtype benutzen, siehe scrguide.pdf (KOMA Script v. 20.08.2017) S.59
 % twocolumn
 % bibtotoc, liststotoc, % obsolete options 
@@ -31,7 +32,7 @@ toc=listof,	% listoffigures and listoftables in toc
 ]{scrreprt}
 				
 \usepackage[
- 	colorlinks=true,
+%  	colorlinks=true,
 % 	urlcolor=blue,
  	linkcolor=red,
 	pdfauthor={Rudolph Ribeiro Maier},
@@ -222,7 +223,7 @@ toc,           % Add GLossary location to Table of Contents..
 \pagenumbering{roman}
 \include{latex_settings/front} % This is the titlepage
 \maketitle
-\includepdf[pages={1,2}]{latex_settings/onepager.pdf}			% Aufgabenstellung
+% \includepdf[pages={1,2}]{latex_settings/onepager.pdf}			% Aufgabenstellung
 % \includepdf[pages=2]{latex_settings/onepager.pdf}			% Aufgabenstellung
 % \blankpage
 %
@@ -241,6 +242,7 @@ toc,           % Add GLossary location to Table of Contents..
 % \newpage
 % 
 % \begin{abstract}
+\setstretch{1.5}		% is equivalent to MS Word Zeilenabstand 1.5
 \input{0_abstract}
 % \addcontentsline{toc}{chapter}{Kurzzusammenfassung}
 % \end{abstract}
@@ -301,7 +303,7 @@ toc,           % Add GLossary location to Table of Contents..
 %
 \newpage
 \appendix
-% \input{99_appendix}  
+\input{99_appendix}  % TODO leads to adding dots to the chapter numbers!!
 \newpage
 \blankpage
 \end{document}
