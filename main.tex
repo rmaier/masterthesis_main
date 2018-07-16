@@ -19,20 +19,54 @@
 %
 %
 \documentclass[a4paper,oneside,11pt,titlepage,	%, captions=nooneline	% captions=nooneline --> flushleft
-% pointlessnumbers,	% Kein Punkt bei Kapitelnummern, nur für scrreprt. Veraltet? (https://golatex.de/pointlessnumbers-pagestyle-t2337.html)
-numbers=noenddot,	% Kein Punkt bei Kapitelnummern, funktioniert mit scrbook (siehe: https://tex.stackexchange.com/questions/25729/remove-dot-after-appendix-numbering)
-% draft, 		% Ggf. microtype benutzen, siehe scrguide.pdf (KOMA Script v. 20.08.2017) S.59
+% pointlessnumbers,				% Kein Punkt bei Kapitelnummern, nur für scrreprt. Veraltet? (https://golatex.de/pointlessnumbers-pagestyle-t2337.html)
+numbers=noenddot,				% Kein Punkt bei Kapitelnummern, funktioniert mit scrbook (siehe: https://tex.stackexchange.com/questions/25729/remove-dot-after-appendix-numbering)
+% draft, 					% Ggf. microtype benutzen, siehe scrguide.pdf (KOMA Script v. 20.08.2017) S.59
 % twocolumn
-% bibtotoc, liststotoc, % obsolete options 
-% longbibliography % deprecated: bibtex option
-% bibtotoc - Lit.VZ im Inha1ltsVZ % deprecated, use toc=bib
-toc=bib, 	% bibliography in toc. see scrguide p.77ff
-% toc=flat,	
-toc=listof,	% listoffigures and listoftables in toc
+% bibtotoc, liststotoc, 			% obsolete options 
+% longbibliography 				% deprecated: bibtex option
+% bibtotoc - Lit.VZ im Inha1ltsVZ 		% deprecated, use toc=bib
+toc=bib, 					% bibliography in toc. see scrguide p.77ff
+% toc=flat,					% flat toc
+toc=listof,					% listoffigures and listoftables in toc
 ]{scrreprt}
 				
+
+						%	KOMA Script (als Europäische  Anpassung vorzuziehen) 
+% 						%	scrartcl, scrreprt, scrbook, scrlttr2
+
+%% Codierung
+\usepackage[utf8]{inputenc}			%	Codierung im Editor fuer direkte Eingabe der Sonderzeichen (WIN: latin1 oder ansinew, MAC: applemac, alt.: utf8)
+\usepackage[T1]{fontenc}			%	U.A. damit Umlaute in PDF Dokumenten gefunden werden,  (T1: PostScript Type 1)
+\usepackage[ngerman]{babel}			%	Anpassung der Überschriften und Silbentrennung (ngerman. english,...)
+%		
+% 			THE BIBLIOGRAPHY -- BIBLATEX WITH BIBER BACKEND
+\usepackage[					% load before babel and polyglossia, but after hyperref
+    backend=biber,
+%     style=authoryear,%apa, 		%numeric, -> citation index for both bibstyle and citestyle?
+    bibstyle=apa,			%         -> citation index used in the LitVZ, should be the same as ``style''
+    citestyle=authoryear,			% 	  -> used for AUTOR JEAR in running text (=authoryear)
+    sortlocale=auto,				% former: de_DE
+%     natbib=true,
+    url=false, 
+    isbn=false,
+    doi=false,
+    maxcitenames=1,
+    uniquename=false,			% Eliminates First Names in quotations 
+    uniquelist=false,			% see https://tex.stackexchange.com/questions/91225/literature-with-biber-generates-strange-citations-firstnames-appear-erratically/98107#98107
+%     defernumbers=true, % 
+%     ibidtracker=context, %damit ebd. funktioniert 
+%     eprint=false
+]{biblatex} 					% Biber 
+\DeclareLanguageMapping{ngerman}{ngerman-apa}
+\DefineBibliographyStrings{ngerman}{andothers={et\addabbrvspace al\adddot}}	% u.a. -> et al. , (see:https://www.mrunix.de/forums/showthread.php?67386-biblatex-quot-andothers-quot-%E4ndern)
+% \DeclareLanguageMappingSuffix{-apa}
+\addbibresource{main.bib}
+% 
+\usepackage{csquotes}				% needed because of Warning: 'babel/polyglossia' detected but 'csquotes' missing
+%
 \usepackage[
-%  	colorlinks=true,
+%   	colorlinks=true,
 % 	urlcolor=blue,
  	linkcolor=red,
 	pdfauthor={Rudolph Ribeiro Maier},
@@ -43,14 +77,7 @@ toc=listof,	% listoffigures and listoftables in toc
  	pdfcreator={pdflatex}
 	bookmarks,				% PDF index
 ]{hyperref}
-						%	KOMA Script (als Europäische  Anpassung vorzuziehen) 
-% 						%	scrartcl, scrreprt, scrbook, scrlttr2
-
-%% Codierung
-\usepackage[utf8]{inputenc}			%	Codierung im Editor fuer direkte Eingabe der Sonderzeichen (WIN: latin1 oder ansinew, MAC: applemac, alt.: utf8)
-\usepackage[T1]{fontenc}			%	U.A. damit Umlaute in PDF Dokumenten gefunden werden,  (T1: PostScript Type 1)
-\usepackage[ngerman]{babel}			%	Anpassung der Überschriften und Silbentrennung (ngerman. english,...)
-%		
+%
 %% Seitenränder
 % 
 \usepackage{geometry}
@@ -66,6 +93,21 @@ toc=listof,	% listoffigures and listoftables in toc
 \clubpenalty = 10000				% Disable single lines at the start of a paragraph (Schusterjungen)
 \widowpenalty = 10000				% Disable single lines at the end of a paragraph (Hurenkinder)
 \displaywidowpenalty = 10000
+\usepackage{microtype}				% Minimizes underfull warnings
+
+\usepackage{url}				% for biblatex urls 
+
+%%% --- The following two lines are what needs to be added --- %%%
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+
+\usepackage{pdflscape} 				% for landscape tables
+
+% \usepackage{multirow, array}			% For tables see: https://tex.stackexchange.com/questions/89115/how-to-rotate-text-in-multirow-table
+\usepackage{rotating}				% Für vertikale Schrift z.B. in Tabellen 
+						% usage: \begin{rotate}{Winkel}
+						% deinGedrehterText
+						% \end{rotate}
 
 
 \setlength{\parindent}{0pt}			% Kein Einrücken der Absätze
@@ -117,7 +159,7 @@ toc=listof,	% listoffigures and listoftables in toc
 % \numberwithin{equation}{section}	
 %
 %% Content Management
-\usepackage{lipsum}
+% \usepackage{lipsum}
 \usepackage{subfigure} 				%	Grafiken nebeneinander : http://www.golatex.de/zwei-bilder-nebeneinander-t1915.html
 \renewcommand{\floatpagefraction}{.8}		% 	Figure Objekte erst ab x % alleine auf einer Seite ohne Text
 % \begin{figure} 
@@ -148,26 +190,7 @@ toc=listof,	% listoffigures and listoftables in toc
 %\usepackage[section]{placeins}                 % definiert \FloatBarrier
 \usepackage[locale=DE]{siunitx}	
 % 
-% 
-\usepackage[
-    backend=biber,
-    style=alphabetic, 	%numeric,
-    bibstyle=alphabetic,
-    sortlocale=de_DE,
-%     natbib=true,
-    url=false, 
-    isbn=false,
-    doi=true,
-%     defernumbers=true, % 
-%     ibidtracker=context, %damit ebd. funktioniert 
-%     eprint=false
-]{biblatex} % Biber 
-\usepackage{csquotes}				% When using babel or polyglossia with biblatex, loading csquotes is recommended to ensure that quoted texts are typeset according to the rules of your main language.
-\addbibresource{main.bib}
-% 	Name, Vorname: 
-\DeclareNameAlias{default}{last-first}
-%	Doppelpunkt nach Autor ( Anstatt Punkt)
-\renewcommand*{\labelnamepunct}{\addcolon\addspace}
+
 %
 % \usepackage{german,longtable}
 %
@@ -175,14 +198,14 @@ toc=listof,	% listoffigures and listoftables in toc
 %------------------------------------------------------
 % Add Glossary Functionality
 \usepackage[
-nonumberlist, 	% don't display page location where Term is used
-acronym,      % create acronym list
-toc,           % Add GLossary location to Table of Contents..
+nonumberlist, 					% don't display page location where Term is used
+acronym,      					% create acronym list
+toc,           					% Add GLossary location to Table of Contents..
 % section
-]      % ..as a section/chapter (but without number!)
+]      						% ..as a section/chapter (but without number!)
 {glossaries}
 %
-% Make \gls not fragile (useful if used within \caption{})
+						% Make \gls not fragile (useful if used within \caption{})
 \robustify{\gls}
 \robustify{\glspl}
 %
@@ -222,7 +245,6 @@ toc,           % Add GLossary location to Table of Contents..
 \setcounter{page}{-1}
 \pagenumbering{roman}
 \include{latex_settings/front} % This is the titlepage
-\maketitle
 % \includepdf[pages={1,2}]{latex_settings/onepager.pdf}			% Aufgabenstellung
 % \includepdf[pages=2]{latex_settings/onepager.pdf}			% Aufgabenstellung
 % \blankpage
@@ -242,7 +264,7 @@ toc,           % Add GLossary location to Table of Contents..
 % \newpage
 % 
 % \begin{abstract}
-\setstretch{1.5}		% is equivalent to MS Word Zeilenabstand 1.5
+\setstretch{1.5}				% is equivalent to MS Word Zeilenabstand 1.5
 \input{0_abstract}
 % \addcontentsline{toc}{chapter}{Kurzzusammenfassung}
 % \end{abstract}
@@ -254,7 +276,7 @@ toc,           % Add GLossary location to Table of Contents..
 \newpage
 % \pagestyle{glossary}
 % \glsaddall
-\printnoidxglossaries 							% see [glossariesbegin.pdf, p.16]
+\printnoidxglossaries 				% see [glossariesbegin.pdf, p.16]
 \listoffigures
 \listoftables
 % \addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
@@ -289,7 +311,7 @@ toc,           % Add GLossary location to Table of Contents..
 \newpage
 \setcounter{page}{0}
 \pagenumbering{arabic}
- \input{1_einleitung}		% \input{file} includes the commands and references
+\input{1_einleitung}		% \input{file} includes the commands and references
 \input{2_methodik}
 \input{3_durchfuehrung}
 \input{4_ableitung}
@@ -298,6 +320,7 @@ toc,           % Add GLossary location to Table of Contents..
 \singlespacing
 % \newpage
 % \
+
 \printbibliography %[title={Literaturverzeichnis}]
 %
 %
